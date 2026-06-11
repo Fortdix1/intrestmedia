@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grown Up Creators — Logo Preview</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #1a1a1a;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #ffffff;
+      min-height: 100vh;
+      padding: 60px 40px;
+    }
+
+    .page-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #C9A84C;
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .page-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(201,168,76,0.2);
+    }
+
+    /* ─── Grid ─── */
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto 60px;
+    }
+
+    .preview-card {
+      border: 1px solid rgba(201,168,76,0.15);
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .preview-card-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      align-self: flex-start;
+    }
+
+    .preview-card img,
+    .preview-card object {
+      display: block;
+    }
+
+    /* Square logo — constrain to reasonable preview size */
+    .logo-square {
+      width: 240px;
+      height: 240px;
+    }
+
+    /* Horizontal logo — full width of card */
+    .logo-horizontal {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+    }
+
+    .preview-card-meta {
+      font-size: 11px;
+      color: rgba(255,255,255,0.28);
+      letter-spacing: 0.08em;
+      align-self: flex-start;
+    }
+
+    /* ─── Dark variant row ─── */
+    .variant-row {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+    }
+
+    .variant-row-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 24px;
+    }
+
+    .variant-strip {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      padding: 36px 48px;
+      border: 1px solid rgba(255,255,255,0.06);
+      flex-wrap: wrap;
+    }
+
+    /* White bg variant */
+    .variant-strip.on-white {
+      background: #ffffff;
+    }
+
+    .variant-strip.on-mid {
+      background: #2d2d2d;
+    }
+
+    /* ─── Size showcase ─── */
+    .size-row {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+    }
+    .size-swatches {
+      display: flex;
+      align-items: flex-end;
+      gap: 40px;
+      padding: 40px 48px;
+      border: 1px solid rgba(201,168,76,0.12);
+      flex-wrap: wrap;
+    }
+    .size-swatch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .size-swatch span {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.25);
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-label">Grown Up Creators — Logo Preview</div>
+
+  <!-- ─── Cover banner ─── -->
+  <div class="variant-row" style="margin-bottom:48px;">
+    <div class="variant-row-label">Skool Cover Banner — 1084 × 576</div>
+    <img src="grownupcreators-cover.svg" style="width:100%;max-width:1084px;display:block;border:1px solid rgba(201,168,76,0.15);" alt="Cover banner"/>
+  </div>
+
+  <!-- ─── Main preview ─── -->
+  <div class="preview-grid">
+
+    <div class="preview-card">
+      <span class="preview-card-label">Square — Profile / Avatar</span>
+      <img src="grownupcreators-logo.svg" class="logo-square" alt="Square logo" />
+      <span class="preview-card-meta">grownupcreators-logo.svg · 500 × 500</span>
+    </div>
+
+    <div class="preview-card">
+      <span class="preview-card-label">Horizontal — Banner / Header</span>
+      <img src="grownupcreators-logo-horizontal.svg" class="logo-horizontal" alt="Horizontal logo" />
+      <span class="preview-card-meta">grownupcreators-logo-horizontal.svg · 380 × 90</span>
+    </div>
+
+  </div>
+
+  <!-- ─── Size variants — square ─── -->
+  <div class="size-row">
+    <div class="variant-row-label">Square logo at common sizes</div>
+    <div class="size-swatches">
+      <div class="size-swatch">
+        <img src="grownupcreators-logo.svg" style="width:200px;height:200px;" alt="" />
+        <span>200px</span>
+      </div>
+      <div class="size-swatch">
+        <img src="grownupcreators-logo.svg" style="width:140px;height:140px;" alt="" />
+        <span>140px</span>
+      </div>
+      <div class="size-swatch">
+        <img src="grownupcreators-logo.svg" style="width:96px;height:96px;" alt="" />
+        <span>96px</span>
+      </div>
+      <div class="size-swatch">
+        <img src="grownupcreators-logo.svg" style="width:64px;height:64px;" alt="" />
+        <span>64px</span>
+      </div>
+      <div class="size-swatch">
+        <img src="grownupcreators-logo.svg" style="width:40px;height:40px;" alt="" />
+        <span>40px</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Horizontal on mid-grey ─── -->
+  <div class="variant-row">
+    <div class="variant-row-label">Horizontal logo on varied backgrounds</div>
+    <div class="variant-strip" style="background:#111111; margin-bottom:4px;">
+      <img src="grownupcreators-logo-horizontal.svg" style="height:60px;width:auto;" alt="" />
+    </div>
+    <div class="variant-strip on-mid" style="margin-bottom:4px;">
+      <img src="grownupcreators-logo-horizontal.svg" style="height:60px;width:auto;" alt="" />
+    </div>
+    <div class="variant-strip" style="background:#2a2218; margin-bottom:4px;">
+      <img src="grownupcreators-logo-horizontal.svg" style="height:60px;width:auto;" alt="" />
+    </div>
+    <div class="variant-strip" style="background:#C9A84C;">
+      <img src="grownupcreators-logo.svg" style="width:80px;height:80px;" alt="" />
+      <span style="font-size:11px;letter-spacing:0.12em;color:rgba(26,26,26,0.5);text-transform:uppercase;">On gold background</span>
+    </div>
+  </div>
+
+</body>
+</html>

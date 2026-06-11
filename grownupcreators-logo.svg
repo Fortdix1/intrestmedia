@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <!--
+      Crown scaled from horizontal at 2.75×:
+        horizontal box: x=10–90 (w=80), y=20–80 (h=60), center x=50
+        scaled box:     x=141–361 (w=220), y=122–287 (h=165), center x=251
+      Path points × 2.75, x_off=113, y_off=73
+    -->
+    <linearGradient id="crownGrad" x1="250" y1="122" x2="250" y2="287" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#F0D678"/>
+      <stop offset="45%"  stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#8A6820"/>
+    </linearGradient>
+    <linearGradient id="bandGrad" x1="250" y1="262" x2="250" y2="287" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#9A7830"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="500" fill="#1a1a1a"/>
+
+  <!-- Inset border -->
+  <rect x="14" y="14" width="472" height="472" fill="none" stroke="#C9A84C" stroke-width="0.75" opacity="0.22"/>
+
+  <!-- ─── Crown body — 3 peaks (exact scale of horizontal crown) ─── -->
+  <path d="
+    M 157,262
+    L 157,235
+    L 196,177
+    L 223,216
+    L 250,122
+    L 277,216
+    L 304,177
+    L 343,235
+    L 343,262
+    Z
+  " fill="url(#crownGrad)"/>
+
+  <!-- Base band -->
+  <rect x="141" y="262" width="220" height="24" rx="5" fill="url(#bandGrad)"/>
+
+  <!-- ─── Gem ornaments — same ring-on-peak style as horizontal, scaled 2.75× ─── -->
+  <!-- Left peak (196, 177) -->
+  <circle cx="196" cy="177" r="12"  fill="#D4AE52"/>
+  <circle cx="196" cy="177" r="6.5" fill="#1a1a1a"/>
+
+  <!-- Center peak (250, 122) — largest -->
+  <circle cx="250" cy="122" r="16"  fill="#F0D678"/>
+  <circle cx="250" cy="122" r="9.5" fill="#1a1a1a"/>
+
+  <!-- Right peak (304, 177) -->
+  <circle cx="304" cy="177" r="12"  fill="#D4AE52"/>
+  <circle cx="304" cy="177" r="6.5" fill="#1a1a1a"/>
+
+  <!-- ─── Divider ─── -->
+  <line x1="188" y1="304" x2="312" y2="304" stroke="#C9A84C" stroke-width="0.8" opacity="0.4"/>
+  <polygon points="250,299 254,304 250,309 246,304" fill="#C9A84C" opacity="0.55"/>
+
+  <!-- ─── Wordmark ─── -->
+  <text
+    x="250" y="342"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="27"
+    font-weight="bold"
+    fill="#C9A84C"
+    text-anchor="middle"
+    letter-spacing="6">GROWN UP</text>
+
+  <text
+    x="250" y="380"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="27"
+    font-weight="bold"
+    fill="#ffffff"
+    text-anchor="middle"
+    letter-spacing="6">CREATORS</text>
+
+</svg>

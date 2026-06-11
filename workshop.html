@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Intrest Media Blueprint — Live Workshop</title>
+  <meta name="description" content="A 90-minute live Zoom workshop teaching business owners and creators how to build their Personal Media Business using the Intrest Media method. Taught by a former TMZ Bureau Chief." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0A0A0A;
+      --bg-2:       #0D0D0D;
+      --bg-3:       #111111;
+      --bg-card:    #141414;
+      --white:      #ffffff;
+      --text:       #E8E8E8;
+      --text-dim:   rgba(232,232,232,0.55);
+      --text-faint: rgba(232,232,232,0.3);
+      --border:     rgba(255,255,255,0.07);
+      --border-2:   rgba(255,255,255,0.04);
+      --red:        #CC0000;
+      --red-h:      #AA0000;
+      --red-dim:    rgba(204,0,0,0.12);
+      --red-line:   rgba(204,0,0,0.4);
+      --radius:     10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 28px 28px;
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 0 32px; }
+    .container-wide { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(10,10,10,0.94);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1080px; margin: 0 auto; padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      text-decoration: none; line-height: 1;
+    }
+    .logo-intrest { font-size: 1.05rem; font-weight: 800; letter-spacing: -0.3px; color: var(--white); }
+    .logo-media   { font-size: 1.05rem; font-weight: 300; letter-spacing: 0.5px; color: rgba(255,255,255,0.4); }
+
+    .nav-price {
+      display: flex; align-items: center; gap: 16px;
+    }
+    .nav-price-label {
+      font-size: 0.78rem; color: var(--text-faint); font-weight: 400;
+    }
+    .nav-price-amount {
+      font-size: 1rem; font-weight: 800; color: var(--white); letter-spacing: -0.5px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 13px 28px; border-radius: var(--radius);
+      font-size: 0.9rem; font-weight: 700; font-family: inherit;
+      cursor: pointer; text-decoration: none; border: none;
+      transition: transform 0.15s, background 0.2s, box-shadow 0.2s;
+      white-space: nowrap; letter-spacing: 0.2px;
+    }
+    .btn:hover  { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-red {
+      background: var(--red); color: var(--white);
+    }
+    .btn-red:hover { background: var(--red-h); box-shadow: 0 8px 32px rgba(204,0,0,0.4); }
+
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.5); }
+
+    .btn-xl { padding: 18px 48px; font-size: 1.05rem; border-radius: var(--radius); }
+    .btn-lg  { padding: 15px 36px; }
+
+    /* ── SECTION DIVIDERS ── */
+    section { border-top: 1px solid var(--red-line); }
+    section:first-of-type { border-top: none; }
+
+    .eyebrow {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--text-faint);
+      margin-bottom: 14px; display: block;
+    }
+    .eyebrow-red { color: var(--red); opacity: 0.85; }
+
+    h2.section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900; letter-spacing: -1.2px;
+      line-height: 1.1; color: var(--white);
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1rem; color: var(--text-dim);
+      max-width: 580px; line-height: 1.75;
+    }
+
+    /* ── ANNOUNCEMENT BANNER ── */
+    .top-banner {
+      background: var(--red);
+      padding: 10px 24px;
+      text-align: center;
+      font-size: 0.82rem; font-weight: 600;
+      color: var(--white); letter-spacing: 0.3px;
+      position: relative; z-index: 199;
+    }
+    .top-banner span { opacity: 0.75; margin: 0 8px; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 140px 32px 100px;
+      text-align: center;
+      position: relative; overflow: hidden;
+      background: var(--bg);
+      border-top: none;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% -5%, rgba(204,0,0,0.1) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 30% at 80% 90%, rgba(255,255,255,0.01) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--red-dim);
+      border: 1px solid var(--red-line);
+      border-radius: var(--radius);
+      padding: 6px 16px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 2px;
+      color: #ff5555; text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+    .hero-badge .live-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--red); animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 6.5vw, 5rem);
+      font-weight: 900; letter-spacing: -2.5px; line-height: 1.0;
+      color: var(--white); max-width: 800px; margin: 0 auto 24px;
+    }
+    .hero h1 .red { color: var(--red); }
+    .hero h1 .dim { color: rgba(255,255,255,0.45); font-weight: 300; }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-dim); max-width: 560px;
+      margin: 0 auto 48px; line-height: 1.7;
+    }
+
+    .hero-price-block {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 6px; margin-bottom: 28px;
+    }
+    .price-was {
+      font-size: 0.85rem; color: var(--text-faint);
+      text-decoration: line-through; font-weight: 400;
+    }
+    .price-now {
+      font-size: 3.5rem; font-weight: 900; letter-spacing: -2px;
+      color: var(--white); line-height: 1;
+    }
+    .price-now sup { font-size: 1.5rem; font-weight: 700; vertical-align: super; letter-spacing: 0; }
+    .price-note {
+      font-size: 0.78rem; color: var(--text-faint); font-weight: 400;
+    }
+
+    .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .hero-guarantee-note {
+      font-size: 0.78rem; color: var(--text-faint);
+    }
+
+    /* ── COUNTDOWN ── */
+    .countdown-wrap {
+      margin: 52px auto 0;
+      max-width: 480px;
+    }
+    .countdown-label {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--text-faint);
+      text-align: center; margin-bottom: 12px;
+    }
+    .countdown {
+      display: flex; justify-content: center; gap: 8px;
+    }
+    .countdown-unit {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 8px;
+      text-align: center;
+    }
+    .countdown-unit .num {
+      font-size: 2rem; font-weight: 900; letter-spacing: -1px;
+      color: var(--white); line-height: 1; display: block;
+    }
+    .countdown-unit .unit-label {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--text-faint);
+      display: block; margin-top: 4px;
+    }
+    .countdown-sep {
+      display: flex; align-items: center;
+      font-size: 1.4rem; font-weight: 700;
+      color: rgba(255,255,255,0.15); padding-bottom: 16px;
+    }
+
+    /* ── PROOF BAR ── */
+    .proof-bar {
+      background: var(--bg-2);
+      padding: 28px 32px;
+      border-top: 1px solid var(--red-line);
+      border-bottom: 1px solid var(--red-line);
+    }
+    .proof-bar-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; justify-content: center;
+      gap: 48px; flex-wrap: wrap;
+    }
+    .proof-item { text-align: center; }
+    .proof-num {
+      font-size: 1.5rem; font-weight: 900; letter-spacing: -0.5px;
+      color: var(--white); line-height: 1; margin-bottom: 4px;
+    }
+    .proof-desc {
+      font-size: 0.7rem; font-weight: 500; color: var(--text-faint);
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    /* ── WHAT YOU'LL LEARN ── */
+    .learn-section { padding: 100px 32px; background: var(--bg); }
+    .learn-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 12px; margin-top: 48px;
+    }
+    @media (max-width: 640px) { .learn-grid { grid-template-columns: 1fr; } }
+
+    .learn-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 28px;
+      display: flex; gap: 18px; align-items: flex-start;
+    }
+    .learn-card:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+    .learn-num {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: var(--red-dim); border: 1px solid var(--red-line);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem; font-weight: 800; color: var(--red);
+      flex-shrink: 0;
+    }
+    .learn-card h3 {
+      font-size: 0.975rem; font-weight: 700; color: var(--white);
+      margin-bottom: 6px; letter-spacing: -0.2px;
+    }
+    .learn-card p {
+      font-size: 0.85rem; color: var(--text-dim); line-height: 1.65;
+    }
+
+    /* ── WHAT MAKES THIS DIFFERENT ── */
+    .different-section { padding: 100px 32px; background: var(--bg-2); }
+
+    .different-lead {
+      max-width: 680px; margin-bottom: 56px;
+    }
+
+    .different-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin-bottom: 40px;
+    }
+    @media (max-width: 640px) { .different-grid { grid-template-columns: 1fr; } }
+
+    .different-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 28px;
+    }
+    .different-card-icon {
+      font-size: 1.4rem; margin-bottom: 14px; display: block;
+    }
+    .different-card h3 {
+      font-size: 0.975rem; font-weight: 700; color: var(--white);
+      margin-bottom: 8px; letter-spacing: -0.2px; line-height: 1.3;
+    }
+    .different-card p {
+      font-size: 0.85rem; color: var(--text-dim); line-height: 1.65;
+    }
+
+    .proof-statement {
+      background: var(--red-dim);
+      border: 1px solid var(--red-line);
+      border-left: 3px solid var(--red);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+    }
+    .proof-statement p {
+      font-size: 1rem; color: var(--text); line-height: 1.75;
+    }
+    .proof-statement p strong { color: var(--white); font-weight: 700; }
+
+    /* ── FOR YOU IF ── */
+    .foryou-section { padding: 100px 32px; background: var(--bg-2); }
+    .foryou-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin-top: 48px;
+    }
+    @media (max-width: 640px) { .foryou-grid { grid-template-columns: 1fr; } }
+
+    .foryou-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      position: relative; overflow: hidden;
+    }
+    .foryou-card.highlighted {
+      border-left: 2px solid var(--red);
+    }
+    .foryou-card-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--text-faint);
+      margin-bottom: 16px; display: block;
+    }
+    .foryou-card h3 {
+      font-size: 1.15rem; font-weight: 800; color: var(--white);
+      margin-bottom: 20px; letter-spacing: -0.3px; line-height: 1.25;
+    }
+    .foryou-list {
+      list-style: none; display: flex; flex-direction: column; gap: 10px;
+    }
+    .foryou-list li {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 0.875rem; color: var(--text-dim); line-height: 1.5;
+    }
+    .foryou-list li::before {
+      content: '→';
+      color: var(--red); font-weight: 700; font-size: 0.8rem;
+      flex-shrink: 0; margin-top: 1px;
+    }
+
+    .not-for-wrap {
+      margin-top: 40px;
+      background: var(--bg-3);
+      border: 1px solid var(--border-2);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+    }
+    .not-for-wrap .nf-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--text-faint);
+      margin-bottom: 12px; display: block;
+    }
+    .not-for-wrap p {
+      font-size: 0.875rem; color: var(--text-dim); line-height: 1.65;
+    }
+
+    /* ── INSTRUCTOR ── */
+    .instructor-section { padding: 100px 32px; background: var(--bg); }
+    .instructor-inner {
+      display: grid; grid-template-columns: 1fr 2fr;
+      gap: 64px; align-items: center;
+      max-width: 860px; margin: 0 auto;
+    }
+    @media (max-width: 700px) { .instructor-inner { grid-template-columns: 1fr; gap: 40px; } }
+
+    .instructor-photo {
+      width: 100%; aspect-ratio: 3/4;
+      border-radius: var(--radius);
+      object-fit: cover; object-position: center top;
+      box-shadow:
+        0 0 0 1px rgba(204,0,0,0.25),
+        0 0 60px rgba(204,0,0,0.06),
+        0 40px 80px rgba(0,0,0,0.6);
+      filter: contrast(1.04) brightness(0.97);
+    }
+    .instructor-badge {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 8px 16px;
+      font-size: 0.75rem; font-weight: 700;
+      margin-bottom: 20px; letter-spacing: 0.3px;
+    }
+    .instructor-name {
+      font-size: 1.8rem; font-weight: 900; letter-spacing: -1px;
+      color: var(--white); margin-bottom: 16px; line-height: 1.1;
+    }
+    .instructor-bio {
+      font-size: 0.925rem; color: var(--text-dim); line-height: 1.8;
+      margin-bottom: 28px;
+    }
+    .instructor-creds { display: flex; flex-direction: column; gap: 10px; }
+    .i-cred {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 0.875rem; color: var(--text-dim); font-weight: 400;
+    }
+    .i-cred-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--red); flex-shrink: 0; margin-top: 7px;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testi-section { padding: 100px 32px; background: var(--bg-2); }
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-top: 48px;
+    }
+    @media (max-width: 760px) { .testi-grid { grid-template-columns: 1fr; } }
+
+    .testi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .testi-stars {
+      display: flex; gap: 3px;
+      color: var(--red); font-size: 0.9rem;
+    }
+    .testi-quote {
+      font-size: 0.925rem; color: var(--text);
+      line-height: 1.75; flex: 1;
+      font-style: italic;
+    }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--bg-3); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; color: var(--text-faint);
+      flex-shrink: 0;
+    }
+    .testi-name {
+      font-size: 0.875rem; font-weight: 700; color: var(--white);
+      margin-bottom: 2px;
+    }
+    .testi-title { font-size: 0.78rem; color: var(--text-faint); }
+    .testi-placeholder-note {
+      display: block; margin-top: 16px;
+      font-size: 0.7rem; color: rgba(232,232,232,0.15);
+      font-style: italic; text-align: center;
+    }
+
+    /* ── GUARANTEE ── */
+    .guarantee-section { padding: 100px 32px; background: var(--bg); }
+    .guarantee-inner {
+      max-width: 680px; margin: 0 auto;
+      text-align: center;
+    }
+    .guarantee-icon {
+      width: 80px; height: 80px; margin: 0 auto 28px;
+      border-radius: 50%;
+      background: var(--red-dim);
+      border: 2px solid var(--red-line);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+    }
+    .guarantee-inner h2 { margin-bottom: 20px; }
+    .guarantee-inner p {
+      font-size: 1rem; color: var(--text-dim); line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .guarantee-inner p strong { color: var(--white); font-weight: 600; }
+    .guarantee-fine {
+      font-size: 0.8rem; color: var(--text-faint); margin-top: 8px;
+    }
+
+    /* ── FINAL CTA ── */
+    .cta-section {
+      padding: 120px 32px;
+      background: var(--bg-2);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(204,0,0,0.09) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cta-section h2 { max-width: 620px; margin: 0 auto 16px; }
+    .cta-section .section-sub { margin: 0 auto 16px; text-align: center; }
+
+    .cta-price-row {
+      display: flex; align-items: baseline; justify-content: center;
+      gap: 10px; margin: 28px 0 32px;
+    }
+    .cta-price-big {
+      font-size: 3rem; font-weight: 900; letter-spacing: -2px;
+      color: var(--white); line-height: 1;
+    }
+    .cta-price-big sup { font-size: 1.3rem; vertical-align: super; letter-spacing: 0; }
+    .cta-price-sub {
+      font-size: 0.85rem; color: var(--text-faint);
+    }
+    .cta-features {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 8px 24px; margin-bottom: 36px;
+    }
+    .cta-feature {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 0.82rem; color: var(--text-dim);
+    }
+    .cta-feature::before { content: '✓'; color: var(--red); font-weight: 700; }
+    .cta-note { font-size: 0.78rem; color: var(--text-faint); margin-top: 16px; }
+
+    /* ── FAQ ── */
+    .faq-section { padding: 80px 32px; background: var(--bg); }
+    .faq-list { max-width: 680px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 4px; }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%; background: none; border: none; cursor: pointer;
+      padding: 20px 24px; text-align: left;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; font-family: inherit;
+    }
+    .faq-q span {
+      font-size: 0.925rem; font-weight: 600; color: var(--white); line-height: 1.4;
+    }
+    .faq-arrow {
+      color: var(--text-faint); font-size: 0.75rem; flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      display: none; padding: 0 24px 20px;
+      font-size: 0.875rem; color: var(--text-dim); line-height: 1.75;
+      border-top: 1px solid var(--border-2);
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #050505;
+      border-top: 1px solid var(--red-line);
+      padding: 36px 32px;
+    }
+    .footer-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    footer p { font-size: 0.78rem; color: var(--text-faint); }
+    footer a { color: var(--text-faint); text-decoration: none; }
+    footer a:hover { color: var(--text-dim); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      .hero { padding: 130px 24px 80px; }
+      .hero h1 { letter-spacing: -1.5px; }
+      .learn-section, .different-section, .foryou-section, .instructor-section,
+      .testi-section, .guarantee-section, .cta-section, .faq-section { padding: 72px 24px; }
+      .proof-bar-inner { gap: 28px; }
+      .countdown { gap: 6px; }
+      .nav-price { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BANNER -->
+  <div class="top-banner">
+    Sunday, April 19 · 2:00 PM EST <span>·</span> Live on Zoom <span>·</span> 90 Minutes <span>·</span> $97 <span>·</span> Limited Spots
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="11" cy="16.5" r="2.2" fill="white"/>
+          <path d="M6.8 12.2C8.0 9.6 9.4 8.4 11 8.4C12.6 8.4 14.0 9.6 15.2 12.2" stroke="white" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+          <path d="M2.5 8.0C5.0 3.6 7.8 1.5 11 1.5C14.2 1.5 17.0 3.6 19.5 8.0" stroke="rgba(255,255,255,0.3)" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="logo-intrest">Intrest</span>
+        <span class="logo-media">Media</span>
+      </a>
+      <div class="nav-price">
+        <span class="nav-price-label">Workshop</span>
+        <span class="nav-price-amount">$97</span>
+        <a href="https://buy.stripe.com/fZu14mby4g7scWd39pdby04" target="_blank" rel="noopener" class="btn btn-red" style="padding:9px 20px;font-size:0.82rem;">Reserve Your Spot</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="border-top:none;">
+    <div class="container">
+      <div class="hero-badge"><span class="live-dot"></span> Live Zoom Workshop &nbsp;·&nbsp; Sunday, April 19 · 2:00 PM EST</div>
+
+      <h1>
+        The <span class="red">Intrest Media</span><br />
+        Blueprint<span class="dim">.</span>
+      </h1>
+
+      <p class="hero-sub">
+        A 90-minute live workshop teaching business owners and creators how to build their Personal Media Business — and make money from their content without needing millions of followers.
+      </p>
+
+      <div class="hero-price-block">
+        <span class="price-was">Value: $497</span>
+        <div class="price-now"><sup>$</sup>97</div>
+        <span class="price-note">One-time payment · Includes replay access</span>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="https://buy.stripe.com/fZu14mby4g7scWd39pdby04" target="_blank" rel="noopener" class="btn btn-red btn-xl">Reserve Your Spot — $97</a>
+      </div>
+      <p class="hero-guarantee-note">100% money-back guarantee if you don't leave with a clear content strategy</p>
+
+      <div class="countdown-wrap">
+        <p class="countdown-label">Workshop starts in — Sunday, April 19 · 2:00 PM EST</p>
+        <div class="countdown">
+          <div class="countdown-unit"><span class="num" id="cd-days">00</span><span class="unit-label">Days</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span class="num" id="cd-hours">00</span><span class="unit-label">Hours</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span class="num" id="cd-mins">00</span><span class="unit-label">Mins</span></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-unit"><span class="num" id="cd-secs">00</span><span class="unit-label">Secs</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF BAR -->
+  <div class="proof-bar">
+    <div class="proof-bar-inner">
+      <div class="proof-item">
+        <div class="proof-num">800K+</div>
+        <div class="proof-desc">Followers Across Platforms</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">10+</div>
+        <div class="proof-desc">Years in Media</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">Ex-TMZ</div>
+        <div class="proof-desc">Bureau Chief</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">90 Min</div>
+        <div class="proof-desc">Live Workshop</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">$97</div>
+        <div class="proof-desc">One-Time Price</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT YOU'LL LEARN -->
+  <section class="learn-section">
+    <div class="container">
+      <span class="eyebrow">What You'll Learn</span>
+      <h2 class="section-title">90 minutes. Everything<br />you need to start.</h2>
+      <p class="section-sub">No fluff, no filler. This workshop is built around six things that will immediately change how you think about content — including a live demonstration of how AI can build your entire media operation.</p>
+
+      <div class="learn-grid">
+        <div class="learn-card">
+          <div class="learn-num">01</div>
+          <div>
+            <h3>What Intrest Media Is — and Why It's Replacing Social Media</h3>
+            <p>Understand the fundamental shift from follower-based reach to interest-based distribution, and why the rules of content have completely changed.</p>
+          </div>
+        </div>
+        <div class="learn-card">
+          <div class="learn-num">02</div>
+          <div>
+            <h3>How to Create Content the Algorithm Actually Distributes</h3>
+            <p>The exact framework for creating posts that the algorithm categorizes, promotes, and sends to the people who are actively looking for what you offer.</p>
+          </div>
+        </div>
+        <div class="learn-card">
+          <div class="learn-num">03</div>
+          <div>
+            <h3>How to Build Your Personal Media Business from Scratch</h3>
+            <p>Whether you have zero followers or 100K, you'll leave with a clear, repeatable system for turning your content into a real media presence.</p>
+          </div>
+        </div>
+        <div class="learn-card">
+          <div class="learn-num">04</div>
+          <div>
+            <h3>How to Make Money from Your Content Without Millions of Followers</h3>
+            <p>The monetization strategies that work at any audience size — including how to turn 500 targeted viewers into real revenue for your business.</p>
+          </div>
+        </div>
+        <div class="learn-card">
+          <div class="learn-num">05</div>
+          <div>
+            <h3>How to Use AI to Build and Run Your Entire Media Business</h3>
+            <p>A live demonstration of how to use AI tools — including Claude — to create your content strategy, build your brand assets, and automate your media operation. No coding experience required. This is how IntrestMedia.com was built from scratch.</p>
+          </div>
+        </div>
+        <div class="learn-card">
+          <div class="learn-num">06</div>
+          <div>
+            <h3>Live Q&amp;A — Your Questions, Answered in Real Time</h3>
+            <p>Bring your specific situation, your platform, your niche. The final segment is dedicated to getting you unstuck on whatever's holding your content back.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT MAKES THIS DIFFERENT -->
+  <section class="different-section">
+    <div class="container">
+      <span class="eyebrow">What Makes This Different</span>
+      <div class="different-lead">
+        <h2 class="section-title">This isn't just a content strategy workshop.<br />It's a live AI demonstration.</h2>
+        <p class="section-sub">Most workshops teach you what to do. This one shows you how to build it — live, in real time, using AI tools that do the heavy lifting for you. No coding experience. No technical background. Just results.</p>
+      </div>
+
+      <div class="different-grid">
+        <div class="different-card">
+          <span class="different-card-icon">🤖</span>
+          <h3>AI Builds Your Strategy While You Watch</h3>
+          <p>See exactly how to use AI to generate a complete content strategy for your specific business — your niche, your platform, your voice. Not a generic template. A real strategy built live on screen.</p>
+        </div>
+        <div class="different-card">
+          <span class="different-card-icon">🌐</span>
+          <h3>A Real Website Built by AI. Zero Code Written.</h3>
+          <p>IntrestMedia.com — the site you may have already visited — was built entirely using AI with no coding experience. That same capability is available to you. This workshop shows you how to use it.</p>
+        </div>
+        <div class="different-card">
+          <span class="different-card-icon">⚡</span>
+          <h3>Your Entire Media Operation, Automated</h3>
+          <p>Learn how to use AI tools to create content calendars, write scripts, build brand assets, and manage your media business — so you spend more time creating and less time on everything else.</p>
+        </div>
+        <div class="different-card">
+          <span class="different-card-icon">🎯</span>
+          <h3>Tools Anyone Can Use Starting Today</h3>
+          <p>Every AI tool demonstrated in this workshop is available to you right now. You don't need to be technical. You don't need to write a single line of code. You just need to show up and follow along.</p>
+        </div>
+      </div>
+
+      <div class="proof-statement">
+        <p>
+          <strong>Here's the proof this works:</strong> IntrestMedia.com — a fully designed, professional media brand website — was built from scratch using AI by someone with zero coding experience. A complete landing page, sales page, content strategy, and brand identity. All of it built live using the same tools taught in this workshop. <strong>If AI can build an entire media company website, it can build your content strategy too.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THIS IS FOR YOU IF -->
+  <section class="foryou-section">
+    <div class="container">
+      <span class="eyebrow">Who This Is For</span>
+      <h2 class="section-title">This is for you if…</h2>
+
+      <div class="foryou-grid">
+        <div class="foryou-card highlighted">
+          <span class="foryou-card-label">Business Owners</span>
+          <h3>You know you need content. You don't know where to start.</h3>
+          <ul class="foryou-list">
+            <li>You're running a business but your content strategy is non-existent</li>
+            <li>You've tried posting but nothing seems to reach the right people</li>
+            <li>You want customers to find you — not the other way around</li>
+            <li>You don't want to go viral, you just want to grow your business</li>
+            <li>You're willing to post consistently if someone shows you exactly what to post</li>
+          </ul>
+        </div>
+        <div class="foryou-card highlighted">
+          <span class="foryou-card-label">Creators</span>
+          <h3>You're already posting. But you're not growing.</h3>
+          <ul class="foryou-list">
+            <li>You've been creating consistently but your numbers are flat</li>
+            <li>You feel like the algorithm is working against you</li>
+            <li>You want to turn your content into actual income</li>
+            <li>You're tired of chasing trends that don't feel authentic</li>
+            <li>You want a real strategy, not just more posting tips</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="not-for-wrap">
+        <span class="nf-label">This is NOT for you if…</span>
+        <p>You're looking for a shortcut to overnight fame, you're not willing to show up and create, or you already have a content system that's working. This workshop is for people who are serious about building something real.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUCTOR -->
+  <section class="instructor-section">
+    <div class="container">
+      <div class="instructor-inner">
+        <div>
+          <img
+            src="Colin Photo in Front of Court.jpg"
+            alt="Workshop Instructor"
+            class="instructor-photo"
+          />
+        </div>
+        <div>
+          <span class="instructor-badge">Your Instructor</span>
+          <h2 class="instructor-name" style="font-size:1.6rem;letter-spacing:-0.5px;margin-bottom:14px;">Former TMZ Bureau Chief.<br />800K+ Followers. Real Results.</h2>
+          <p class="instructor-bio">
+            I spent over a decade at TMZ — starting as a Producer and rising to Bureau Chief, one of the most senior editorial roles at one of the most powerful media companies in the world. I wasn't just watching viral content happen. I was building it, every day.
+            <br /><br />
+            I learned exactly how the algorithm thinks, why some content reaches millions and most disappears, and how to engineer posts that find the right audience every time. Now I'm teaching it — and this workshop is where it starts.
+          </p>
+          <div class="instructor-creds">
+            <div class="i-cred"><span class="i-cred-dot"></span>10+ years of media industry experience</div>
+            <div class="i-cred"><span class="i-cred-dot"></span>Former Bureau Chief at TMZ — rose through Producer, Reporter, Senior Producer</div>
+            <div class="i-cred"><span class="i-cred-dot"></span>800K+ followers across TikTok, YouTube &amp; Instagram</div>
+            <div class="i-cred"><span class="i-cred-dot"></span>Founder of Intrest Media and creator of the Tyson AI assistant</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testi-section">
+    <div class="container">
+      <span class="eyebrow">What People Are Saying</span>
+      <h2 class="section-title">Real results from<br />real people.</h2>
+
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"I've taken a dozen content courses and none of them explained the algorithm the way this did. I left the workshop and immediately changed my entire posting strategy. Within two weeks my reach tripled. This is the only framework that actually makes sense."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">JM</div>
+            <div>
+              <div class="testi-name">Jamie M.</div>
+              <div class="testi-title">Founder, boutique fitness studio</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"I've been creating content for three years and was completely stuck at 12K followers. After this workshop I finally understood why — and what to change. The live Q&A alone was worth 10x the price. I got specific answers for my exact situation."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">DK</div>
+            <div>
+              <div class="testi-name">Devon K.</div>
+              <div class="testi-title">Lifestyle creator, 47K followers</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"I'm a business owner who was terrified of social media. This workshop changed that completely. I now understand exactly what to post, why it works, and how it connects to growing my business. I booked three new clients in the month after the workshop."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">RL</div>
+            <div>
+              <div class="testi-name">Rachel L.</div>
+              <div class="testi-title">Owner, interior design firm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="testi-placeholder-note">Testimonials are placeholders — replace with real reviews before launch</span>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="guarantee-section">
+    <div class="container">
+      <div class="guarantee-inner">
+        <div class="guarantee-icon">🛡️</div>
+        <span class="eyebrow" style="display:block;text-align:center;">The Guarantee</span>
+        <h2 class="section-title">If you don't leave with a clear content strategy, I'll refund every penny.</h2>
+        <p>
+          Show up to the workshop live, do the work, and if you don't walk away with a <strong>clear, actionable content strategy</strong> you can start using immediately — email me within 7 days and I will refund your full $97. No questions asked.
+        </p>
+        <p>
+          I'm not interested in taking money from people who don't get results. This guarantee exists because I'm confident that if you show up and engage, you will leave with more clarity about your content than you've ever had.
+        </p>
+        <p class="guarantee-fine">Must attend the live workshop to be eligible. Refund requests accepted within 7 days of the event date.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL BUY CTA -->
+  <section class="cta-section" id="buy">
+    <div class="container" style="position:relative;z-index:1;">
+      <span class="eyebrow eyebrow-red" style="display:block;text-align:center;">Limited Spots</span>
+      <h2 class="section-title" style="text-align:center;">Ready to build your<br />Personal Media Business?</h2>
+      <p class="section-sub" style="text-align:center;margin:0 auto;">
+        One live 90-minute session. The same framework I built from 10+ years inside TMZ. The clarity you've been looking for.
+      </p>
+
+      <div class="cta-price-row">
+        <div class="cta-price-big"><sup>$</sup>97</div>
+        <div class="cta-price-sub">one-time · includes replay</div>
+      </div>
+
+      <div class="cta-features">
+        <span class="cta-feature">90-min live Zoom workshop</span>
+        <span class="cta-feature">Full replay access</span>
+        <span class="cta-feature">Live Q&amp;A with instructor</span>
+        <span class="cta-feature">100% money-back guarantee</span>
+      </div>
+
+      <a href="https://buy.stripe.com/fZu14mby4g7scWd39pdby04" target="_blank" rel="noopener" class="btn btn-red btn-xl" id="buyBtn">Reserve Your Spot — $97</a>
+      <p class="cta-note">Secure checkout powered by Stripe &nbsp;·&nbsp; Instant confirmation email</p>
+      <p class="cta-note" style="margin-top:6px;">100% money-back guarantee if you don't leave with a clear content strategy</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <span class="eyebrow" style="text-align:center;display:block;">FAQ</span>
+      <h2 class="section-title" style="text-align:center;max-width:500px;margin:0 auto 0;">Common questions.</h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>What platform is the workshop on?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">The workshop is hosted live on Zoom. You'll receive a confirmation email with the link immediately after purchase. A replay will be available within 24 hours of the live session.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>What if I can't attend live?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">A full replay is included with your purchase. You'll have access to the recording so you can watch at your own pace. Note: the money-back guarantee requires live attendance, so if you can make it live, do it.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Is this for beginners or more advanced creators?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">Both. The core framework is foundational enough for someone posting for the first time, and specific enough to immediately fix what's broken for an experienced creator. The live Q&A is where we get into your specific situation regardless of level.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>What platforms does this apply to?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">The Intrest Media method applies to TikTok, Instagram, YouTube, and any platform that uses interest-based distribution. The principles are platform-agnostic — wherever your audience lives, the framework works.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>How does the money-back guarantee work?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">Attend the live workshop, engage with the material, and if you don't leave with a clear content strategy you can start using immediately — email us within 7 days of the event for a full refund. No hoops, no hassle.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Is this the same as a course?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-a">No. This is a live, interactive workshop — not a pre-recorded course. You can ask questions in real time and get answers specific to your business, your niche, and your platform. It's 90 minutes of focused, direct instruction and live Q&A.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="logo">
+        <svg width="18" height="16" viewBox="0 0 22 20" fill="none" aria-hidden="true">
+          <circle cx="11" cy="16.5" r="2.2" fill="white"/>
+          <path d="M6.8 12.2C8.0 9.6 9.4 8.4 11 8.4C12.6 8.4 14.0 9.6 15.2 12.2" stroke="white" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+          <path d="M2.5 8.0C5.0 3.6 7.8 1.5 11 1.5C14.2 1.5 17.0 3.6 19.5 8.0" stroke="rgba(255,255,255,0.3)" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="logo-intrest">Intrest</span>
+        <span class="logo-media">Media</span>
+      </a>
+      <p>© 2026 Intrest Media. All rights reserved.</p>
+      <p><a href="index.html">← Back to main site</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // ── COUNTDOWN TIMER ──
+    // Sunday April 19, 2026 at 2:00 PM EST (UTC-5)
+    const workshopDate = new Date('2026-04-19T19:00:00Z'); // 2PM EST = 7PM UTC
+
+    function updateCountdown() {
+      const now  = new Date().getTime();
+      const diff = workshopDate.getTime() - now;
+
+      if (diff <= 0) {
+        document.getElementById('cd-days').textContent  = '00';
+        document.getElementById('cd-hours').textContent = '00';
+        document.getElementById('cd-mins').textContent  = '00';
+        document.getElementById('cd-secs').textContent  = '00';
+        return;
+      }
+
+      const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').textContent  = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').textContent  = String(mins).padStart(2, '0');
+      document.getElementById('cd-secs').textContent  = String(secs).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ── FAQ TOGGLE ──
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      item.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>

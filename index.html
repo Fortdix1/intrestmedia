@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intrest Media — You Don't Need More Followers. You Need the Right Content.</title>
+  <meta name="description" content="Intrest Media helps business owners and creators stop chasing followers and start posting content the algorithm actually sends to the right audience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0A0A0A;
+      --bg-2:      #0D0D0D;
+      --bg-card:   #111111;
+      --white:     #ffffff;
+      --text:      #E8E8E8;
+      --text-dim:  rgba(232,232,232,0.5);
+      --text-faint:rgba(232,232,232,0.28);
+      --border:    rgba(255,255,255,0.07);
+      --red:       #CC0000;
+      --red-h:     #AA0000;
+      --red-dim:   rgba(204,0,0,0.12);
+      --red-line:  rgba(204,0,0,0.35);
+      --radius:    8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1080px; margin: 0 auto; padding: 0 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      display: inline-flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .logo-icon { flex-shrink: 0; display: block; }
+    .logo-intrest { font-size: 1.05rem; font-weight: 800; color: var(--white); }
+    .logo-media   { font-size: 1.05rem; font-weight: 300; color: rgba(255,255,255,0.4); margin-left: 5px; }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 11px 26px; border-radius: var(--radius);
+      font-size: 0.875rem; font-weight: 600; font-family: inherit;
+      cursor: pointer; text-decoration: none; border: none;
+      transition: transform 0.15s, background 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-red    { background: var(--red); color: var(--white); }
+    .btn-red:hover    { background: var(--red-h); box-shadow: 0 6px 28px rgba(204,0,0,0.4); }
+    .btn-ghost  { background: transparent; color: var(--text-dim); border: 1px solid var(--border); }
+    .btn-ghost:hover { color: var(--white); border-color: rgba(255,255,255,0.2); }
+    .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.18); }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.04); }
+    .btn-lg { padding: 16px 40px; font-size: 1rem; }
+
+    /* ─── SECTION BASE ─── */
+    .section { padding: 140px 40px; }
+    .container { max-width: 1080px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--red); margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.08;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 0;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 30% 50%, rgba(204,0,0,0.09) 0%, transparent 65%);
+      pointer-events: none; z-index: 0;
+    }
+    .hero-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 440px;
+      align-items: center;
+      min-height: 100vh;
+      padding: 120px 40px;
+      gap: 60px;
+      position: relative; z-index: 1;
+    }
+    .hero-left { text-align: left; }
+    .hero-label {
+      display: inline-block;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--red);
+      border: 1px solid var(--red-line);
+      padding: 6px 16px; border-radius: 20px;
+      margin-bottom: 36px;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -3px;
+      line-height: 1.02;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+    .hero h1 .strike {
+      text-decoration: line-through;
+      color: rgba(255,255,255,0.25);
+      text-decoration-color: var(--red);
+    }
+    .hero h1 .highlight { color: var(--red); }
+    .hero-sub {
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      color: var(--text-dim);
+      max-width: 480px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex; gap: 14px; flex-wrap: wrap;
+    }
+
+    /* Desktop rectangular photo — right column */
+    .hero-photo-wrap {
+      width: 100%;
+      height: 600px;
+      overflow: hidden;
+      border-radius: 6px;
+    }
+    .hero-photo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* Mobile: hide desktop layout, show centered circle */
+    @media (max-width: 768px) {
+      .hero { padding: 0; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        min-height: unset;
+        padding: 120px 24px 80px;
+        gap: 0;
+        text-align: center;
+      }
+      .hero-left { order: 1; }
+      .hero h1 { margin-bottom: 32px; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-ctas { justify-content: center; flex-direction: column; align-items: center; }
+
+      /* circular photo on mobile */
+      .hero-photo-wrap {
+        order: 2;
+        width: 280px; height: 280px;
+        border-radius: 50%;
+        margin: 36px auto 0;
+        border: 3px solid var(--red-line);
+        box-shadow: 0 0 40px rgba(204,0,0,0.2);
+      }
+    }
+
+    /* ─── FOUNDER ─── */
+    .founder {
+      padding: 140px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .founder-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 440px 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .founder-img-wrap { position: relative; }
+    .founder-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border-radius: 4px;
+    }
+    .founder-text .eyebrow { margin-bottom: 16px; }
+    .founder-text .section-title { margin-bottom: 28px; }
+    .founder-text p {
+      font-size: 1.05rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+      margin-bottom: 22px;
+    }
+    .founder-text p:last-child { margin-bottom: 0; }
+
+    /* ─── OFFERS ─── */
+    .offers {
+      padding: 140px 40px;
+      background: var(--bg-2);
+      border-bottom: 1px solid var(--border);
+    }
+    .offers-header {
+      max-width: 1080px; margin: 0 auto 64px;
+    }
+    .offers-grid {
+      max-width: 1080px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .offer-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--red);
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+    }
+    .offer-card-secondary {
+      border-top-color: rgba(255,255,255,0.15);
+    }
+    .offer-tag {
+      font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--red); margin-bottom: 20px;
+    }
+    .offer-card-secondary .offer-tag { color: var(--text-faint); }
+    .offer-name {
+      font-size: 1.6rem; font-weight: 800;
+      color: var(--white); line-height: 1.15;
+      margin-bottom: 14px; letter-spacing: -0.5px;
+    }
+    .offer-subtitle {
+      font-size: 0.9rem; color: var(--text-dim);
+      line-height: 1.6; margin-bottom: 36px;
+    }
+    .offer-price {
+      margin-top: auto;
+      padding-top: 36px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .offer-price-amount {
+      display: flex; align-items: baseline; gap: 6px;
+    }
+    .offer-price-num {
+      font-size: 2.6rem; font-weight: 900;
+      color: var(--white); letter-spacing: -1.5px;
+    }
+    .offer-price-note {
+      font-size: 0.82rem; color: var(--text-faint);
+    }
+    .offer-badge {
+      display: inline-block;
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: var(--red-dim);
+      border: 1px solid var(--red-line);
+      color: #ff5555;
+      padding: 4px 10px; border-radius: 4px;
+      margin-bottom: 4px;
+      width: fit-content;
+    }
+
+    /* ─── TYSON SECTION ─── */
+    .tyson-section {
+      background: #000;
+      color: var(--white);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .tyson-glow {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 55% at 50% 0%,   rgba(204,0,0,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 15% 100%,  rgba(204,0,0,0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 30% at 85% 100%,  rgba(204,0,0,0.04) 0%, transparent 55%);
+    }
+    .tyson-banner {
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 18px 32px;
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      position: relative; z-index: 1;
+    }
+    .tyson-banner-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--red-dim);
+      border: 1px solid var(--red-line);
+      border-radius: var(--radius);
+      padding: 5px 14px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: #ff4444;
+    }
+    .tyson-banner-badge .pulse {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--red);
+      animation: pulse 2s ease infinite;
+    }
+    .tyson-banner-text { font-size: 0.8rem; color: rgba(255,255,255,0.35); font-weight: 500; }
+    .tyson-hero {
+      text-align: center;
+      padding: 100px 32px 80px;
+      position: relative; z-index: 1;
+    }
+    .tyson-wordmark {
+      font-size: clamp(5rem, 18vw, 13rem);
+      font-weight: 900;
+      letter-spacing: -6px;
+      line-height: 0.9;
+      background: linear-gradient(135deg, #ffffff 20%, rgba(255,255,255,0.7) 55%, var(--red) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 32px;
+      display: block;
+    }
+    .tyson-positioning {
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      color: rgba(255,255,255,0.55);
+      max-width: 620px; margin: 0 auto 48px;
+      line-height: 1.65; font-weight: 400;
+    }
+    .tyson-positioning strong { color: var(--white); font-weight: 700; }
+    .tyson-body {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: rgba(255,255,255,0.06);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      position: relative; z-index: 1;
+    }
+    .tyson-features {
+      padding: 64px 48px; background: #000;
+      display: flex; flex-direction: column; gap: 40px;
+    }
+    .tyson-feature { display: flex; gap: 20px; align-items: flex-start; }
+    .tyson-feature-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      border-radius: 8px;
+      background: var(--red-dim); border: 1px solid var(--red-line);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .tyson-feature-text h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: var(--white); }
+    .tyson-feature-text p { font-size: 0.875rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+    .tyson-mockup-panel {
+      padding: 48px; background: #050505;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .tyson-mockup {
+      background: #0f0f0f;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px; overflow: hidden;
+    }
+    .tyson-mockup-header {
+      background: #161616;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 14px 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .ai-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .ai-dot-r { background: #ff5f57; }
+    .ai-dot-y { background: #febc2e; }
+    .ai-dot-g { background: #28c840; }
+    .tyson-mockup-name {
+      font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.4);
+      margin-left: auto; display: flex; align-items: center; gap: 6px;
+    }
+    .tyson-mockup-name .live-dot { width: 6px; height: 6px; border-radius: 50%; background: #28c840; }
+    .tyson-chat { padding: 24px 20px; display: flex; flex-direction: column; gap: 14px; }
+    .ai-msg { border-radius: 14px; padding: 13px 16px; font-size: 0.82rem; line-height: 1.65; }
+    .ai-msg.user {
+      background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6);
+      align-self: flex-end; max-width: 78%; border-bottom-right-radius: 4px;
+    }
+    .ai-msg.bot {
+      background: rgba(204,0,0,0.07); border: 1px solid rgba(204,0,0,0.18);
+      color: var(--text); border-bottom-left-radius: 4px;
+    }
+    .ai-msg.bot .bot-name {
+      display: block; font-size: 0.65rem; font-weight: 700;
+      color: #ff4444; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase;
+    }
+    .ai-cursor {
+      display: inline-block; width: 2px; height: 13px;
+      background: var(--red); vertical-align: middle; margin-left: 2px;
+      animation: blink 1s step-end infinite;
+    }
+    .tyson-cta-strip {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 48px 32px; text-align: center;
+      position: relative; z-index: 1; background: #000;
+    }
+    .tyson-cta-strip p { font-size: 0.875rem; color: rgba(255,255,255,0.35); margin-top: 14px; }
+
+    /* ─── NEWSLETTER ─── */
+    .newsletter {
+      padding: 140px 40px;
+      background: var(--bg-2);
+      border-top: 1px solid var(--red-line);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .newsletter::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(204,0,0,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .newsletter-inner { max-width: 540px; margin: 0 auto; position: relative; }
+    .newsletter .eyebrow { margin-bottom: 20px; }
+    .newsletter h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900; letter-spacing: -1.5px;
+      color: var(--white); margin-bottom: 16px; line-height: 1.05;
+    }
+    .newsletter p {
+      font-size: 1rem; color: var(--text-dim); line-height: 1.7;
+      margin-bottom: 44px;
+    }
+    .newsletter-btn {
+      display: inline-block;
+      background: var(--red); color: #fff;
+      font-size: 1rem; font-weight: 700; letter-spacing: 0.3px;
+      padding: 18px 52px; border-radius: var(--radius);
+      text-decoration: none;
+      box-shadow: 0 0 32px rgba(204,0,0,0.35);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .newsletter-btn:hover {
+      background: var(--red-h); transform: translateY(-2px);
+      box-shadow: 0 0 48px rgba(204,0,0,0.5);
+    }
+    .newsletter-note { font-size: 0.78rem; color: var(--text-faint); margin-top: 18px; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #050505;
+      border-top: 1px solid var(--border);
+      padding: 40px;
+    }
+    .footer-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    footer p { font-size: 0.8rem; color: var(--text-faint); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 840px) {
+      .offers-grid { grid-template-columns: 1fr; }
+      .tyson-body { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .section { padding: 100px 24px; }
+      .hero { padding: 100px 24px 80px; }
+      .founder { padding: 80px 24px; }
+      .offers { padding: 100px 24px; }
+      .newsletter { padding: 100px 24px; }
+      footer { padding: 32px 24px; }
+      nav .nav-links .btn-ghost { display: none; }
+      .offer-card { padding: 40px 28px; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <svg class="logo-icon" width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="11" cy="16.5" r="2.2" fill="white"/>
+          <path d="M6.8 12.2C8.0 9.6 9.4 8.4 11 8.4C12.6 8.4 14.0 9.6 15.2 12.2"
+                stroke="white" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+          <path d="M2.5 8.0C5.0 3.6 7.8 1.5 11 1.5C14.2 1.5 17.0 3.6 19.5 8.0"
+                stroke="rgba(255,255,255,0.3)" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="logo-intrest">Intrest</span><span class="logo-media">Media</span>
+      </a>
+      <div class="nav-links">
+        <a href="https://calendly.com/10gcolin/15min" target="_blank" rel="noopener" class="btn btn-ghost">Book a Call</a>
+        <a href="https://intrestmedia.beehiiv.com" target="_blank" rel="noopener" class="btn btn-red">Join the Waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-label">Media Education &amp; Consulting</div>
+        <h1>
+          You don't need<br />
+          <span class="strike">more followers.</span><br />
+          You need the <span class="highlight">right content.</span>
+        </h1>
+        <p class="hero-sub">
+          In the Intrest Media era, the algorithm finds your audience — you just need to know what to post.
+        </p>
+        <div class="hero-ctas">
+          <a href="https://calendly.com/10gcolin/15min" target="_blank" rel="noopener" class="btn btn-red btn-lg">Book a Free Strategy Call</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <img src="colin-capitolhill.JPEG" alt="Colin — Founder of Intrest Media" class="hero-photo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="founder" id="founder">
+    <div class="founder-inner" style="grid-template-columns: 1fr; max-width: 720px;">
+      <div class="founder-text">
+        <p class="eyebrow">The Founder</p>
+        <h2 class="section-title">Built by someone who's been inside the machine.</h2>
+        <p>
+          I spent over a decade at TMZ — rising from Producer to Reporter, Senior Producer, and ultimately Bureau Chief, one of the most senior editorial roles at one of the most powerful media companies in the world. I wasn't just watching viral content happen. I was making it.
+        </p>
+        <p>
+          I learned exactly how stories get found, why some content explodes and most disappears, and what the algorithm actually rewards. Now I teach it. Whether you're a business owner who's never made a reel or a creator with 50K followers who's plateaued — I can show you what changes everything.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO OFFERS -->
+  <section class="offers" id="offers">
+    <div class="offers-header">
+      <p class="eyebrow">Work With Us</p>
+      <h2 class="section-title">Two ways to get started.</h2>
+    </div>
+    <div class="offers-grid">
+
+      <!-- Card 1 -->
+      <div class="offer-card">
+        <p class="offer-tag">The Personal Media Business Accelerator</p>
+        <h3 class="offer-name">90 Days To Your Biggest Q4 Ever</h3>
+        <p class="offer-subtitle">Starting June 1st. 25 spots only.</p>
+        <div class="offer-price">
+          <div>
+            <div class="offer-badge">Early Bird — First 10 Spots</div>
+            <div class="offer-price-amount">
+              <span class="offer-price-num">$997</span>
+              <span class="offer-price-note">one-time</span>
+            </div>
+          </div>
+          <a href="https://buy.stripe.com/dRm4gyfOk3kG1dvaBRdby05" target="_blank" rel="noopener" class="btn btn-red btn-lg">Claim Your Spot</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="offer-card offer-card-secondary">
+        <p class="offer-tag">Intrest Media Retainer</p>
+        <h3 class="offer-name">We Inject A Media Company Into Your Business</h3>
+        <p class="offer-subtitle">For established businesses ready to get serious.</p>
+        <div class="offer-price">
+          <div>
+            <div class="offer-price-amount">
+              <span class="offer-price-num">$2,500</span>
+              <span class="offer-price-note">/month</span>
+            </div>
+            <p style="font-size:0.8rem;color:var(--text-faint);margin-top:4px;">Starting at</p>
+          </div>
+          <a href="https://calendly.com/10gcolin/15min" target="_blank" rel="noopener" class="btn btn-outline btn-lg">Book A Strategy Call</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TYSON AI TOOL -->
+  <section class="tyson-section" id="tyson">
+    <div class="tyson-glow"></div>
+
+    <div class="tyson-banner">
+      <div class="tyson-banner-badge"><span class="pulse"></span> Coming Soon</div>
+      <span class="tyson-banner-text">The most powerful tool Intrest Media has ever built</span>
+    </div>
+
+    <div class="tyson-hero">
+      <span class="tyson-wordmark">TYSON</span>
+      <p class="tyson-positioning">
+        <strong>Meet Tyson.</strong> Your Personal Media Business Assistant. Powered by AI.<br />
+        Built by someone who spent a decade inside TMZ.
+      </p>
+      <a href="https://intrestmedia.beehiiv.com" target="_blank" rel="noopener" class="btn btn-red btn-lg">Get Early Access to Tyson</a>
+    </div>
+
+    <div class="tyson-body">
+      <div class="tyson-features">
+        <div class="tyson-feature">
+          <div class="tyson-feature-icon">🎯</div>
+          <div class="tyson-feature-text">
+            <h4>Knows What to Post</h4>
+            <p>Tell Tyson about your business. Get a content strategy built around what the algorithm is actually rewarding in your niche right now.</p>
+          </div>
+        </div>
+        <div class="tyson-feature">
+          <div class="tyson-feature-icon">⚡</div>
+          <div class="tyson-feature-text">
+            <h4>Built on 10+ Years of Media Intelligence</h4>
+            <p>Tyson isn't a generic AI. It's trained on a decade of real media industry knowledge — the same instincts that drove TMZ's content machine.</p>
+          </div>
+        </div>
+        <div class="tyson-feature">
+          <div class="tyson-feature-icon">📈</div>
+          <div class="tyson-feature-text">
+            <h4>Turns Posting into Growth</h4>
+            <p>No more guessing. No more wasted content. Every post Tyson helps you create is designed to find the audience already looking for you.</p>
+          </div>
+        </div>
+        <div class="tyson-feature">
+          <div class="tyson-feature-icon">🗣️</div>
+          <div class="tyson-feature-text">
+            <h4>Your Voice. Your Strategy.</h4>
+            <p>Tyson doesn't make you sound like everyone else. It helps you post more of what makes you — you — and makes sure the right people see it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tyson-mockup-panel">
+        <div class="tyson-mockup">
+          <div class="tyson-mockup-header">
+            <div class="ai-dot ai-dot-r"></div>
+            <div class="ai-dot ai-dot-y"></div>
+            <div class="ai-dot ai-dot-g"></div>
+            <div class="tyson-mockup-name"><span class="live-dot"></span> Tyson — Active</div>
+          </div>
+          <div class="tyson-chat">
+            <div class="ai-msg user">I run a bakery. 800 followers. I post but nothing happens. Help.</div>
+            <div class="ai-msg bot">
+              <span class="bot-name">Tyson</span>
+              Follower count isn't your problem — content type is. The algorithm is pushing transformation content hard in the food space right now. Stop posting finished products. Show the process. Your croissant lamination, the 6am dough pull, the moment something comes out of the oven. That's the content people can't scroll past. Post that tomorrow. <span class="ai-cursor"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tyson-cta-strip">
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://intrestmedia.beehiiv.com" target="_blank" rel="noopener" class="btn btn-red btn-lg">Join the Waitlist for Tyson</a>
+        <a href="https://calendly.com/10gcolin/15min" target="_blank" rel="noopener" class="btn btn-outline btn-lg">Book a Free 15-Min Call</a>
+      </div>
+      <p>Free early access for the first 500 people who sign up.</p>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="waitlist">
+    <div class="newsletter-inner">
+      <p class="eyebrow">Newsletter</p>
+      <h2>Join The Intrest Media Brief</h2>
+      <p>Weekly insights on building your Personal Media Business. Free. No spam.</p>
+      <a href="https://intrestmedia.beehiiv.com" target="_blank" rel="noopener noreferrer" class="newsletter-btn">Subscribe Free →</a>
+      <p class="newsletter-note">Join thousands of media professionals. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="#" class="logo">
+        <svg class="logo-icon" width="18" height="16" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="11" cy="16.5" r="2.2" fill="white"/>
+          <path d="M6.8 12.2C8.0 9.6 9.4 8.4 11 8.4C12.6 8.4 14.0 9.6 15.2 12.2"
+                stroke="white" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+          <path d="M2.5 8.0C5.0 3.6 7.8 1.5 11 1.5C14.2 1.5 17.0 3.6 19.5 8.0"
+                stroke="rgba(255,255,255,0.3)" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="logo-intrest">Intrest</span><span class="logo-media">Media</span>
+      </a>
+      <p>© 2026 Intrest Media. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

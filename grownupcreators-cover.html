@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grown Up Creators — Cover Banner</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    /* ─── Banner container ─── */
+    .banner {
+      position: relative;
+      width: 1084px;
+      height: 576px;
+      background-color: #1a1a1a;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V18L28 2l28 16v32L28 66zM28 100L0 84V68l28 16 28-16v16L28 100z' fill='none' stroke='%23C9A84C' stroke-width='0.5' stroke-opacity='0.09'/%3E%3C/svg%3E");
+      background-size: 56px 100px;
+      overflow: hidden;
+      font-family: Georgia, 'Times New Roman', serif;
+      flex-shrink: 0;
+    }
+
+    /* ─── Photo — left 45% ─── */
+    .photo-col {
+      position: absolute;
+      left: 0; top: 0;
+      width: 488px;
+      height: 576px;
+      overflow: hidden;
+    }
+
+    .photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      /* Fade right edge into dark background */
+      -webkit-mask-image: linear-gradient(to right, black 50%, transparent 88%);
+      mask-image:         linear-gradient(to right, black 50%, transparent 88%);
+    }
+
+    /* ─── Right content column ─── */
+    .right-col {
+      position: absolute;
+      right: 0; top: 0;
+      width: 596px;
+      height: 576px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Gold glow behind the crown */
+    .right-col::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -62%);
+      width: 420px;
+      height: 320px;
+      background: radial-gradient(ellipse at center,
+        rgba(201,168,76,0.26) 0%,
+        rgba(201,168,76,0.08) 45%,
+        transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Content block: crown + text, centered */
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .crown {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .label {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 19px;
+      font-weight: bold;
+      color: #C9A84C;
+      letter-spacing: 0.55em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .headline {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 78px;
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 0.04em;
+      text-align: center;
+      line-height: 1;
+    }
+
+    /* ─── Inset border frame ─── */
+    .frame {
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(201,168,76,0.22);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* Top and bottom accent lines — right zone only */
+    .frame::before,
+    .frame::after {
+      content: '';
+      position: absolute;
+      left: 458px;  /* offset into right zone: 488-18=470, then ~12px in */
+      right: 0;
+      height: 1px;
+      background: rgba(201,168,76,0.3);
+    }
+    .frame::before { top: 0; }
+    .frame::after  { bottom: 0; }
+
+  </style>
+</head>
+<body>
+
+  <div class="banner">
+
+    <!-- Photo — left side -->
+    <div class="photo-col">
+      <img class="photo" src="colin-capitol.JPEG" alt="Colin" />
+    </div>
+
+    <!-- Crown + wordmark — right side -->
+    <div class="right-col">
+      <div class="content">
+
+        <!-- Crown SVG — 3 peaks, 200×127px -->
+        <svg class="crown"
+             viewBox="0 0 200 127"
+             width="200" height="127"
+             xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cg" x1="100" y1="14" x2="100" y2="117" gradientUnits="userSpaceOnUse">
+              <stop offset="0%"   stop-color="#F0D678"/>
+              <stop offset="40%"  stop-color="#C9A84C"/>
+              <stop offset="100%" stop-color="#8A6820"/>
+            </linearGradient>
+            <linearGradient id="bg" x1="100" y1="103" x2="100" y2="117" gradientUnits="userSpaceOnUse">
+              <stop offset="0%"   stop-color="#C9A84C"/>
+              <stop offset="100%" stop-color="#9A7830"/>
+            </linearGradient>
+          </defs>
+
+          <!--
+            3-peak crown — same design language as horizontal logo
+            Center peak: (100, 14)   ← tallest
+            Side peaks:  (38, 56)  (162, 56)
+            Valleys:     (68, 74)  (132, 74)
+            Wall corners:(10, 92)  (190, 92)
+            Base y=103, band y=103–117, rx=4
+          -->
+          <path d="M 10,103 L 10,92 L 38,56 L 68,74 L 100,14 L 132,74 L 162,56 L 190,92 L 190,103 Z"
+                fill="url(#cg)"/>
+
+          <!-- Base band -->
+          <rect x="3" y="103" width="194" height="14" rx="4" fill="url(#bg)"/>
+
+          <!-- Gem — left peak (38, 56) -->
+          <circle cx="38"  cy="56" r="8.5" fill="#D4AE52"/>
+          <circle cx="38"  cy="56" r="4.8" fill="#1a1a1a"/>
+
+          <!-- Gem — center peak (100, 14) — largest -->
+          <circle cx="100" cy="14" r="11"  fill="#F0D678"/>
+          <circle cx="100" cy="14" r="6.5" fill="#1a1a1a"/>
+
+          <!-- Gem — right peak (162, 56) -->
+          <circle cx="162" cy="56" r="8.5" fill="#D4AE52"/>
+          <circle cx="162" cy="56" r="4.8" fill="#1a1a1a"/>
+        </svg>
+
+        <div class="label">Grown Up</div>
+        <div class="headline">CREATORS</div>
+
+      </div>
+    </div>
+
+    <!-- Inset border frame -->
+    <div class="frame"></div>
+
+  </div>
+
+</body>
+</html>
