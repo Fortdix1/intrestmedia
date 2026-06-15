@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intrest Media — Client Onboarding Call SOP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0A0A0A; --bg-2: #0D0D0D; --bg-card: #111111;
+      --white: #ffffff; --text: #E8E8E8;
+      --text-dim: rgba(232,232,232,0.55); --text-faint: rgba(232,232,232,0.3);
+      --border: rgba(255,255,255,0.07);
+      --red: #CC0000; --red-dim: rgba(204,0,0,0.1); --red-line: rgba(204,0,0,0.35);
+      --green: #00AA44; --green-dim: rgba(0,170,68,0.1); --green-line: rgba(0,170,68,0.35);
+      --radius: 10px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; padding: 60px 32px; }
+    .page { max-width: 860px; margin: 0 auto; }
+
+    /* Header */
+    .doc-header { border-bottom: 1px solid var(--red-line); padding-bottom: 32px; margin-bottom: 40px; }
+    .doc-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-faint); margin-bottom: 12px; }
+    .doc-title { font-size: 2rem; font-weight: 800; letter-spacing: -1px; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+    .doc-title span { color: var(--red); }
+    .doc-meta { display: flex; flex-wrap: wrap; gap: 28px; }
+    .meta-item { display: flex; flex-direction: column; gap: 3px; }
+    .meta-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-faint); }
+    .meta-value { font-size: 0.9rem; font-weight: 600; color: var(--white); }
+
+    /* Alert box */
+    .alert { background: var(--red-dim); border: 1px solid var(--red-line); border-left: 3px solid var(--red); border-radius: var(--radius); padding: 20px 24px; margin-bottom: 40px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.65; }
+    .alert strong { color: var(--white); }
+
+    /* Section */
+    .section { margin-bottom: 48px; }
+    .section-heading { font-size: 0.68rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--red); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .section-heading::after { content: ''; flex: 1; height: 1px; background: var(--red-line); opacity: 0.4; }
+    .section-title { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px; color: var(--white); margin-bottom: 16px; }
+
+    /* Checklist */
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .checklist li { display: flex; align-items: flex-start; gap: 14px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.55; }
+    .checklist li input[type="checkbox"] { width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; accent-color: var(--red); cursor: pointer; }
+    .checklist li label { cursor: pointer; }
+    .checklist li strong { color: var(--white); display: block; margin-bottom: 3px; font-size: 0.925rem; }
+
+    /* Talk track cards */
+    .talk-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; margin-bottom: 8px; }
+    .talk-card-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 8px; display: block; }
+    .talk-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .talk-card p { font-size: 0.875rem; color: var(--text-dim); line-height: 1.7; margin-bottom: 10px; }
+    .talk-card p:last-child { margin-bottom: 0; }
+    .talk-card .script { background: rgba(255,255,255,0.03); border-left: 2px solid rgba(255,255,255,0.12); border-radius: 0 6px 6px 0; padding: 12px 16px; font-size: 0.855rem; color: rgba(232,232,232,0.75); font-style: italic; line-height: 1.65; margin-top: 10px; }
+    .talk-card .script-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-faint); margin-bottom: 6px; display: block; font-style: normal; }
+
+    /* Action items */
+    .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    @media (max-width: 600px) { .action-grid { grid-template-columns: 1fr; } }
+    .action-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; }
+    .action-who { font-size: 0.58rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; display: block; }
+    .action-who.colin { color: var(--red); }
+    .action-who.client { color: #4488ff; }
+    .action-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .action-card p { font-size: 0.8rem; color: var(--text-dim); line-height: 1.6; }
+
+    /* Tracker section */
+    .tracker-card { background: var(--bg-card); border: 1px solid var(--border); border-top: 2px solid var(--green); border-radius: var(--radius); padding: 24px 28px; margin-bottom: 8px; }
+    .tracker-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .tracker-card p { font-size: 0.875rem; color: var(--text-dim); line-height: 1.7; }
+    .tracker-tag { font-size: 0.6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 8px; display: block; }
+
+    /* Metrics table */
+    .metrics-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .metrics-table th { font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-faint); padding: 10px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+    .metrics-table td { font-size: 0.855rem; color: var(--text-dim); padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .metrics-table tr:last-child td { border-bottom: none; }
+
+    /* Footer */
+    .doc-footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.75rem; color: rgba(232,232,232,0.2); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+    @media (max-width: 600px) { body { padding: 40px 20px; } .doc-meta { gap: 16px; } }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <p class="doc-label">Intrest Media — SOP #001</p>
+    <h1 class="doc-title">Client <span>Onboarding Call</span> Framework</h1>
+    <div class="doc-meta">
+      <div class="meta-item"><span class="meta-label">Version</span><span class="meta-value">1.0</span></div>
+      <div class="meta-item"><span class="meta-label">Call Length</span><span class="meta-value">60–90 Minutes</span></div>
+      <div class="meta-item"><span class="meta-label">First Used</span><span class="meta-value">June 15, 2026 — Caraline's Adventure</span></div>
+      <div class="meta-item"><span class="meta-label">Owner</span><span class="meta-value">Colin — Intrest Media</span></div>
+    </div>
+  </div>
+
+  <div class="alert">
+    <strong>Purpose of this SOP:</strong> Use this framework for every new client onboarding call. It ensures every client gets the same high-quality experience, every important topic gets covered, and you leave every call with a clear action plan for both sides.
+  </div>
+
+  <!-- PRE-CALL CHECKLIST -->
+  <div class="section">
+    <div class="section-heading">Before the Call</div>
+    <div class="section-title">Pre-Call Checklist</div>
+    <ul class="checklist">
+      <li>
+        <input type="checkbox" id="c1"><label for="c1"><strong>Review client's social profiles</strong>Pull up their TikTok, Instagram, YouTube, and Facebook. Note follower counts, recent post frequency, engagement, and bio links.</label>
+      </li>
+      <li>
+        <input type="checkbox" id="c2"><label for="c2"><strong>Check their current bio links</strong>Are they pointing to the right place? Is there a link-in-bio tool being used? What's the CTA?</label>
+      </li>
+      <li>
+        <input type="checkbox" id="c3"><label for="c3"><strong>Note their niche and content style</strong>What type of content are they making? What's working? What's not getting traction?</label>
+      </li>
+      <li>
+        <input type="checkbox" id="c4"><label for="c4"><strong>Identify 3–5 potential brand partners</strong>Based on their niche, who are the obvious brand fits? Come to the call with ideas.</label>
+      </li>
+      <li>
+        <input type="checkbox" id="c5"><label for="c5"><strong>Have this SOP open during the call</strong>Use it as your guide. Check off each section as you go.</label>
+      </li>
+      <li>
+        <input type="checkbox" id="c6"><label for="c6"><strong>Set up audience tracking doc</strong>Create a fresh tracking sheet for this client before the call.</label>
+      </li>
+    </ul>
+  </div>
+
+  <!-- CALL AGENDA -->
+  <div class="section">
+    <div class="section-heading">Call Structure</div>
+    <div class="section-title">Agenda — 60 to 90 Minutes</div>
+
+    <div class="talk-card">
+      <span class="talk-card-tag">Minutes 0–5</span>
+      <h3>Open & Set the Tone</h3>
+      <p>Welcome them, celebrate that they took the step, and set the agenda for the call so they know what to expect.</p>
+      <div class="script"><span class="script-label">Talk Track</span>"Really glad you're here. Today we're going to build the foundation of your entire media company. By the end of this call you're going to have a content blueprint, a clear plan for your newsletter, and we're going to identify your first brand deal targets. Let's get into it."</div>
+    </div>
+
+    <div class="talk-card">
+      <span class="talk-card-tag">Minutes 5–20</span>
+      <h3>Brand Audit — Where Are You Right Now?</h3>
+      <p>Pull up their profiles together. Walk through each platform. Ask them to share their analytics screen. Document the baseline numbers — this is what you'll measure growth against.</p>
+      <div class="script"><span class="script-label">Questions to Ask</span>"Walk me through your platforms — which one feels most natural to you? Where do you feel like you're closest to breaking through? What content have you posted that got the most traction, even a little?"</div>
+    </div>
+
+    <div class="talk-card">
+      <span class="talk-card-tag">Minutes 20–30 ⚠️ Don't Skip</span>
+      <h3>Email List & Newsletter Strategy</h3>
+      <p>This is one of the most important conversations you'll have with every client. Social platforms can change their algorithm or disappear. An email list is the only audience they truly own. Frame it that way.</p>
+      <div class="script"><span class="script-label">Talk Track</span>"Here's something most creators never think about until it's too late — your followers on TikTok, Instagram, YouTube? You don't own those. The platform does. The moment you build an email list, you own that audience forever. No algorithm can take it away. So we're starting your newsletter from day one — not as an afterthought, but as a core part of your media company."</div>
+      <p style="margin-top:12px;">Cover: platform choice (Beehiiv recommended), cadence, content format, and the lead magnet or CTA you'll use to drive signups.</p>
+    </div>
+
+    <div class="talk-card">
+      <span class="talk-card-tag">Minutes 30–40 ⚠️ Don't Skip</span>
+      <h3>Bio Link Strategy</h3>
+      <p>Every platform bio is valuable real estate. Most people waste it. Walk them through the exact strategy for what their bio should say and where the link should point.</p>
+      <div class="script"><span class="script-label">Talk Track</span>"Your bio is the only place on most platforms where you can put a clickable link. Most people either don't use it or point it somewhere random. We're going to be strategic — every bio, every platform, pointing to the same place with the same CTA. Here's how we think about it..."</div>
+      <p style="margin-top:12px;"><strong>The framework:</strong> One primary destination (newsletter signup or lead page). One clear CTA in the bio copy. Consistent across all platforms. Update it when you have a live offer.</p>
+    </div>
+
+    <div class="talk-card">
+      <span class="talk-card-tag">Minutes 40–55</span>
+      <h3>Content Blueprint — What Are You Posting?</h3>
+      <p>Build their content pillars together. Identify 3–4 content categories that fit their niche, their personality, and what the algorithm is rewarding right now. Map out their first 2 weeks of posts.</p>
+      <div class="script"><span class="script-label">Questions to Ask</span>"What do you know better than most people? What could you talk about for an hour without notes? What do people come to you for advice about?"</div>
+    </div>
+
+    <div class="talk-card">
+      <span class="talk-card-tag">Minutes 55–65</span>
+      <h3>Brand Deal Targets</h3>
+      <p>Identify 5–10 brands they'd love to work with. Then identify 5–10 realistic brands that are a natural fit for their current audience size. Build the hit list together.</p>
+      <div class="script"><span class="script-label">Talk Track</span>"Brand deals don't just happen — we build a pipeline and we work it. Let's start with your dream list, then we'll get realistic about what we can close in the next 90 days based on where your audience is right now."</div>
+    </div>
+
+    <div class="talk-card">
+      <span class="talk-card-tag">Minutes 65–75</span>
+      <h3>Audience Tracking Setup ⚠️ Don't Skip</h3>
+      <p>Set up the system for tracking where growth is coming from after each post. This is how you double down on what works and stop wasting time on what doesn't.</p>
+      <div class="script"><span class="script-label">Talk Track</span>"Every time you post, we're going to track three things — which platform the post went on, what type of content it was, and where your new followers and clicks came from that day. Over time this tells us exactly what your audience responds to and who they are. That's how we build a machine, not just a posting schedule."</div>
+      <p style="margin-top:12px;">Cover: what metrics to check, when to check them (24hrs and 7 days post), and how to log them in the tracking sheet.</p>
+    </div>
+
+    <div class="talk-card">
+      <span class="talk-card-tag">Minutes 75–90</span>
+      <h3>90-Day Roadmap & Next Steps</h3>
+      <p>Close the call with a clear picture of what the next 90 days look like. Both sides should leave knowing exactly what they're responsible for.</p>
+      <div class="script"><span class="script-label">Talk Track</span>"Here's what the next 90 days look like. Month 1 is about foundation — content system, newsletter live, bio links locked in. Month 2 is about momentum — brand deal outreach, audience growth, doubling down on what's working. Month 3 is about monetization — closing deals, building your speaking pipeline, turning your audience into income."</div>
+    </div>
+
+  </div>
+
+  <!-- AUDIENCE TRACKING -->
+  <div class="section">
+    <div class="section-heading">Tracking System</div>
+    <div class="section-title">Audience Source Tracking — What to Measure</div>
+    <p style="font-size:0.9rem;color:var(--text-dim);line-height:1.7;margin-bottom:20px;">After every post, log these metrics within 24 hours and again at 7 days. Over time this data tells you exactly which content type, platform, and topic drives the most growth — so you can double down and stop guessing.</p>
+
+    <div class="tracker-card">
+      <span class="tracker-tag">Per Post — Log Within 24 Hours</span>
+      <h3>Post Performance Tracker</h3>
+      <table class="metrics-table">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>What to Track</th>
+            <th>Why It Matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Platform</td><td>TikTok / IG / YouTube / Facebook</td><td>Shows which platform is driving growth</td></tr>
+          <tr><td>Content Type</td><td>Talking head / Process / Story / Educational / Trend</td><td>Identifies which format your audience responds to</td></tr>
+          <tr><td>Topic / Pillar</td><td>What was the post about?</td><td>Shows which topics attract your ideal audience</td></tr>
+          <tr><td>Views at 24hrs</td><td>Raw view count</td><td>Early signal of algorithm distribution</td></tr>
+          <tr><td>New Followers at 24hrs</td><td>Follower gain since post</td><td>Shows if content is converting viewers to followers</td></tr>
+          <tr><td>Link Clicks at 24hrs</td><td>Bio link clicks (if trackable)</td><td>Shows if content drives action</td></tr>
+          <tr><td>Views at 7 days</td><td>Raw view count</td><td>Shows if algorithm kept pushing after day 1</td></tr>
+          <tr><td>Comments / Saves / Shares</td><td>Engagement breakdown</td><td>High saves = educational content working. High shares = viral potential.</td></tr>
+          <tr><td>Audience Notes</td><td>Who commented? What did they say?</td><td>Identifies your actual audience avatar</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tracker-card">
+      <span class="tracker-tag">Monthly — Growth Audit</span>
+      <h3>Monthly Platform Snapshot</h3>
+      <table class="metrics-table">
+        <thead>
+          <tr><th>Platform</th><th>Followers Start</th><th>Followers End</th><th>Top Post</th><th>Newsletter Subs</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>TikTok</td><td></td><td></td><td></td><td>—</td></tr>
+          <tr><td>Instagram</td><td></td><td></td><td></td><td>—</td></tr>
+          <tr><td>YouTube</td><td></td><td></td><td></td><td>—</td></tr>
+          <tr><td>Facebook</td><td></td><td></td><td></td><td>—</td></tr>
+          <tr><td>Newsletter</td><td>—</td><td>—</td><td>—</td><td>Total subs</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- POST-CALL ACTION ITEMS -->
+  <div class="section">
+    <div class="section-heading">After the Call</div>
+    <div class="section-title">Action Items — Both Sides</div>
+    <div class="action-grid">
+      <div class="action-card">
+        <span class="action-who colin">Colin — Intrest Media</span>
+        <h4>Send call recap email within 24hrs</h4>
+        <p>Summarize what was decided, the 90-day roadmap, and both sides' action items.</p>
+      </div>
+      <div class="action-card">
+        <span class="action-who client">Client</span>
+        <h4>Set up newsletter platform account</h4>
+        <p>Sign up for Beehiiv (or agreed platform) and share login access.</p>
+      </div>
+      <div class="action-card">
+        <span class="action-who colin">Colin — Intrest Media</span>
+        <h4>Build content calendar — first 2 weeks</h4>
+        <p>Deliver the first 14 days of posts with topics, formats, and hooks.</p>
+      </div>
+      <div class="action-card">
+        <span class="action-who client">Client</span>
+        <h4>Update all bio links</h4>
+        <p>Implement the bio link strategy across every platform before first post goes live.</p>
+      </div>
+      <div class="action-card">
+        <span class="action-who colin">Colin — Intrest Media</span>
+        <h4>Create audience tracking sheet</h4>
+        <p>Build the client's tracking doc and share it. Walk them through how to use it.</p>
+      </div>
+      <div class="action-card">
+        <span class="action-who client">Client</span>
+        <h4>Send brand wish list</h4>
+        <p>Email Colin their top 10 brands they'd love to work with before end of week.</p>
+      </div>
+      <div class="action-card">
+        <span class="action-who colin">Colin — Intrest Media</span>
+        <h4>Start media kit</h4>
+        <p>Begin building the client's media kit using their current stats and niche positioning.</p>
+      </div>
+      <div class="action-card">
+        <span class="action-who client">Client</span>
+        <h4>Post first piece of content</h4>
+        <p>Using the content blueprint — first post goes live within 48 hours of the call.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <span>Intrest Media — SOP #001 — Onboarding Call Framework</span>
+    <span>Version 1.0 · June 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
