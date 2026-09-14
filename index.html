@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Intrest Media — You Don't Need More Followers. You Need the Right Content.</title>
-  <meta name="description" content="Intrest Media helps business owners and creators stop chasing followers and start posting content the algorithm actually sends to the right audience." />
+  <title>Intrest Media — Hire a Trained Executive Creator for Your Business</title>
+  <meta name="description" content="Intrest Media places trained Executive Creators into businesses — the right content fit for your industry. Book a free strategy call." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
@@ -58,7 +58,6 @@
     .logo-icon { flex-shrink: 0; display: block; }
     .logo-intrest { font-size: 1.05rem; font-weight: 800; color: var(--white); }
     .logo-media   { font-size: 1.05rem; font-weight: 300; color: rgba(255,255,255,0.4); margin-left: 5px; }
-    .nav-links { display: flex; align-items: center; gap: 8px; }
 
     /* ─── BUTTONS ─── */
     .btn {
@@ -72,8 +71,6 @@
     .btn:hover { transform: translateY(-1px); }
     .btn-red    { background: var(--red); color: var(--white); }
     .btn-red:hover    { background: var(--red-h); box-shadow: 0 6px 28px rgba(204,0,0,0.4); }
-    .btn-ghost  { background: transparent; color: var(--text-dim); border: 1px solid var(--border); }
-    .btn-ghost:hover { color: var(--white); border-color: rgba(255,255,255,0.2); }
     .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.18); }
     .btn-outline:hover { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.04); }
     .btn-lg { padding: 16px 40px; font-size: 1rem; }
@@ -95,6 +92,12 @@
       line-height: 1.08;
       color: var(--white);
       margin-bottom: 20px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-dim);
+      max-width: 640px;
+      line-height: 1.75;
     }
 
     /* ─── HERO ─── */
@@ -130,31 +133,34 @@
       margin-bottom: 36px;
     }
     .hero h1 {
-      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
       font-weight: 900;
       letter-spacing: -3px;
-      line-height: 1.02;
+      line-height: 1.04;
       color: var(--white);
       margin-bottom: 28px;
-    }
-    .hero h1 .strike {
-      text-decoration: line-through;
-      color: rgba(255,255,255,0.25);
-      text-decoration-color: var(--red);
     }
     .hero h1 .highlight { color: var(--red); }
     .hero-sub {
       font-size: clamp(1rem, 1.6vw, 1.15rem);
       color: var(--text-dim);
-      max-width: 480px;
-      margin-bottom: 48px;
+      max-width: 500px;
+      margin-bottom: 16px;
       line-height: 1.7;
+    }
+    .hero-def {
+      font-size: 0.92rem;
+      color: var(--text-faint);
+      max-width: 500px;
+      margin-bottom: 44px;
+      line-height: 1.7;
+      border-left: 2px solid var(--red-line);
+      padding-left: 16px;
     }
     .hero-ctas {
       display: flex; gap: 14px; flex-wrap: wrap;
     }
 
-    /* Desktop rectangular photo — right column */
     .hero-photo-wrap {
       width: 100%;
       height: 600px;
@@ -168,7 +174,6 @@
       display: block;
     }
 
-    /* Mobile: hide desktop layout, show centered circle */
     @media (max-width: 768px) {
       .hero { padding: 0; }
       .hero-inner {
@@ -180,10 +185,9 @@
       }
       .hero-left { order: 1; }
       .hero h1 { margin-bottom: 32px; }
-      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-sub, .hero-def { margin-left: auto; margin-right: auto; text-align: left; }
       .hero-ctas { justify-content: center; flex-direction: column; align-items: center; }
 
-      /* circular photo on mobile */
       .hero-photo-wrap {
         order: 2;
         width: 280px; height: 280px;
@@ -194,26 +198,93 @@
       }
     }
 
+    /* ─── PROBLEM ─── */
+    .problem {
+      padding: 140px 40px;
+      background: var(--bg-2);
+      border-bottom: 1px solid var(--border);
+    }
+    .problem-header { max-width: 1080px; margin: 0 auto 64px; }
+    .problem-grid {
+      max-width: 1080px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .problem-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 40px 32px;
+    }
+    .problem-card .num {
+      font-size: 0.7rem; font-weight: 700; color: var(--red);
+      letter-spacing: 1.5px; margin-bottom: 18px;
+    }
+    .problem-card h3 {
+      font-size: 1.15rem; font-weight: 700; color: var(--white);
+      margin-bottom: 12px; letter-spacing: -0.3px;
+    }
+    .problem-card p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.65; }
+
+    /* ─── SOLUTION ─── */
+    .solution {
+      padding: 140px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .solution-inner {
+      max-width: 780px; margin: 0 auto;
+    }
+    .solution p {
+      font-size: 1.05rem; color: var(--text-dim); line-height: 1.8;
+      margin-bottom: 22px;
+    }
+    .solution p:last-child { margin-bottom: 0; }
+    .solution strong { color: var(--white); }
+    .disclaimer-box {
+      margin-top: 40px;
+      padding: 24px 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid rgba(255,255,255,0.2);
+      font-size: 0.88rem;
+      color: var(--text-faint);
+      line-height: 1.7;
+    }
+
+    /* ─── PROCESS ─── */
+    .process {
+      padding: 140px 40px;
+      background: var(--bg-2);
+      border-bottom: 1px solid var(--border);
+    }
+    .process-header { max-width: 1080px; margin: 0 auto 64px; }
+    .process-grid {
+      max-width: 1080px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .process-step {
+      position: relative;
+      padding-top: 8px;
+    }
+    .process-step .step-num {
+      font-size: 3rem; font-weight: 900; color: rgba(255,255,255,0.08);
+      letter-spacing: -2px; line-height: 1; margin-bottom: 16px;
+    }
+    .process-step h3 {
+      font-size: 1.1rem; font-weight: 700; color: var(--white);
+      margin-bottom: 10px; letter-spacing: -0.3px;
+    }
+    .process-step p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.65; }
+
     /* ─── FOUNDER ─── */
     .founder {
       padding: 140px 40px;
       border-bottom: 1px solid var(--border);
     }
     .founder-inner {
-      max-width: 1080px; margin: 0 auto;
-      display: grid;
-      grid-template-columns: 440px 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .founder-img-wrap { position: relative; }
-    .founder-photo {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-      border-radius: 4px;
+      max-width: 720px; margin: 0 auto;
     }
     .founder-text .eyebrow { margin-bottom: 16px; }
     .founder-text .section-title { margin-bottom: 28px; }
@@ -225,246 +296,32 @@
     }
     .founder-text p:last-child { margin-bottom: 0; }
 
-    /* ─── OFFERS ─── */
-    .offers {
-      padding: 140px 40px;
-      background: var(--bg-2);
-      border-bottom: 1px solid var(--border);
-    }
-    .offers-header {
-      max-width: 1080px; margin: 0 auto 64px;
-    }
-    .offers-grid {
-      max-width: 1080px; margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    .offer-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--red);
-      padding: 52px 48px;
-      display: flex;
-      flex-direction: column;
-    }
-    .offer-card-secondary {
-      border-top-color: rgba(255,255,255,0.15);
-    }
-    .offer-tag {
-      font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      color: var(--red); margin-bottom: 20px;
-    }
-    .offer-card-secondary .offer-tag { color: var(--text-faint); }
-    .offer-name {
-      font-size: 1.6rem; font-weight: 800;
-      color: var(--white); line-height: 1.15;
-      margin-bottom: 14px; letter-spacing: -0.5px;
-    }
-    .offer-subtitle {
-      font-size: 0.9rem; color: var(--text-dim);
-      line-height: 1.6; margin-bottom: 36px;
-    }
-    .offer-price {
-      margin-top: auto;
-      padding-top: 36px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .offer-price-amount {
-      display: flex; align-items: baseline; gap: 6px;
-    }
-    .offer-price-num {
-      font-size: 2.6rem; font-weight: 900;
-      color: var(--white); letter-spacing: -1.5px;
-    }
-    .offer-price-note {
-      font-size: 0.82rem; color: var(--text-faint);
-    }
-    .offer-badge {
-      display: inline-block;
-      font-size: 0.62rem; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase;
-      background: var(--red-dim);
-      border: 1px solid var(--red-line);
-      color: #ff5555;
-      padding: 4px 10px; border-radius: 4px;
-      margin-bottom: 4px;
-      width: fit-content;
-    }
-
-    /* ─── TYSON SECTION ─── */
-    .tyson-section {
-      background: #000;
-      color: var(--white);
-      padding: 0;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .tyson-glow {
-      position: absolute; inset: 0; pointer-events: none;
-      background:
-        radial-gradient(ellipse 80% 55% at 50% 0%,   rgba(204,0,0,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 30% at 15% 100%,  rgba(204,0,0,0.05) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 30% at 85% 100%,  rgba(204,0,0,0.04) 0%, transparent 55%);
-    }
-    .tyson-banner {
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      padding: 18px 32px;
-      display: flex; align-items: center; justify-content: center; gap: 12px;
-      position: relative; z-index: 1;
-    }
-    .tyson-banner-badge {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--red-dim);
-      border: 1px solid var(--red-line);
-      border-radius: var(--radius);
-      padding: 5px 14px;
-      font-size: 0.68rem; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase; color: #ff4444;
-    }
-    .tyson-banner-badge .pulse {
-      width: 6px; height: 6px; border-radius: 50%; background: var(--red);
-      animation: pulse 2s ease infinite;
-    }
-    .tyson-banner-text { font-size: 0.8rem; color: rgba(255,255,255,0.35); font-weight: 500; }
-    .tyson-hero {
-      text-align: center;
-      padding: 100px 32px 80px;
-      position: relative; z-index: 1;
-    }
-    .tyson-wordmark {
-      font-size: clamp(5rem, 18vw, 13rem);
-      font-weight: 900;
-      letter-spacing: -6px;
-      line-height: 0.9;
-      background: linear-gradient(135deg, #ffffff 20%, rgba(255,255,255,0.7) 55%, var(--red) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 32px;
-      display: block;
-    }
-    .tyson-positioning {
-      font-size: clamp(1rem, 2.2vw, 1.3rem);
-      color: rgba(255,255,255,0.55);
-      max-width: 620px; margin: 0 auto 48px;
-      line-height: 1.65; font-weight: 400;
-    }
-    .tyson-positioning strong { color: var(--white); font-weight: 700; }
-    .tyson-body {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1px; background: rgba(255,255,255,0.06);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      position: relative; z-index: 1;
-    }
-    .tyson-features {
-      padding: 64px 48px; background: #000;
-      display: flex; flex-direction: column; gap: 40px;
-    }
-    .tyson-feature { display: flex; gap: 20px; align-items: flex-start; }
-    .tyson-feature-icon {
-      width: 44px; height: 44px; flex-shrink: 0;
-      border-radius: 8px;
-      background: var(--red-dim); border: 1px solid var(--red-line);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem;
-    }
-    .tyson-feature-text h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: var(--white); }
-    .tyson-feature-text p { font-size: 0.875rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
-    .tyson-mockup-panel {
-      padding: 48px; background: #050505;
-      display: flex; flex-direction: column; justify-content: center;
-    }
-    .tyson-mockup {
-      background: #0f0f0f;
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 20px; overflow: hidden;
-    }
-    .tyson-mockup-header {
-      background: #161616;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      padding: 14px 20px;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .ai-dot { width: 10px; height: 10px; border-radius: 50%; }
-    .ai-dot-r { background: #ff5f57; }
-    .ai-dot-y { background: #febc2e; }
-    .ai-dot-g { background: #28c840; }
-    .tyson-mockup-name {
-      font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.4);
-      margin-left: auto; display: flex; align-items: center; gap: 6px;
-    }
-    .tyson-mockup-name .live-dot { width: 6px; height: 6px; border-radius: 50%; background: #28c840; }
-    .tyson-chat { padding: 24px 20px; display: flex; flex-direction: column; gap: 14px; }
-    .ai-msg { border-radius: 14px; padding: 13px 16px; font-size: 0.82rem; line-height: 1.65; }
-    .ai-msg.user {
-      background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6);
-      align-self: flex-end; max-width: 78%; border-bottom-right-radius: 4px;
-    }
-    .ai-msg.bot {
-      background: rgba(204,0,0,0.07); border: 1px solid rgba(204,0,0,0.18);
-      color: var(--text); border-bottom-left-radius: 4px;
-    }
-    .ai-msg.bot .bot-name {
-      display: block; font-size: 0.65rem; font-weight: 700;
-      color: #ff4444; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase;
-    }
-    .ai-cursor {
-      display: inline-block; width: 2px; height: 13px;
-      background: var(--red); vertical-align: middle; margin-left: 2px;
-      animation: blink 1s step-end infinite;
-    }
-    .tyson-cta-strip {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 48px 32px; text-align: center;
-      position: relative; z-index: 1; background: #000;
-    }
-    .tyson-cta-strip p { font-size: 0.875rem; color: rgba(255,255,255,0.35); margin-top: 14px; }
-
-    /* ─── NEWSLETTER ─── */
-    .newsletter {
+    /* ─── FINAL CTA ─── */
+    .final-cta {
       padding: 140px 40px;
       background: var(--bg-2);
       border-top: 1px solid var(--red-line);
       text-align: center;
       position: relative; overflow: hidden;
     }
-    .newsletter::before {
+    .final-cta::before {
       content: '';
       position: absolute; inset: 0;
       background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(204,0,0,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
-    .newsletter-inner { max-width: 540px; margin: 0 auto; position: relative; }
-    .newsletter .eyebrow { margin-bottom: 20px; }
-    .newsletter h2 {
+    .final-cta-inner { max-width: 560px; margin: 0 auto; position: relative; }
+    .final-cta .eyebrow { margin-bottom: 20px; }
+    .final-cta h2 {
       font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 900; letter-spacing: -1.5px;
       color: var(--white); margin-bottom: 16px; line-height: 1.05;
     }
-    .newsletter p {
+    .final-cta p {
       font-size: 1rem; color: var(--text-dim); line-height: 1.7;
       margin-bottom: 44px;
     }
-    .newsletter-btn {
-      display: inline-block;
-      background: var(--red); color: #fff;
-      font-size: 1rem; font-weight: 700; letter-spacing: 0.3px;
-      padding: 18px 52px; border-radius: var(--radius);
-      text-decoration: none;
-      box-shadow: 0 0 32px rgba(204,0,0,0.35);
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    }
-    .newsletter-btn:hover {
-      background: var(--red-h); transform: translateY(-2px);
-      box-shadow: 0 0 48px rgba(204,0,0,0.5);
-    }
-    .newsletter-note { font-size: 0.78rem; color: var(--text-faint); margin-top: 18px; }
+    .final-cta-note { font-size: 0.78rem; color: var(--text-faint); margin-top: 18px; }
 
     /* ─── FOOTER ─── */
     footer {
@@ -477,25 +334,23 @@
       display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
     }
     footer p { font-size: 0.8rem; color: var(--text-faint); }
-
-    /* ─── ANIMATIONS ─── */
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+    .footer-links { display: flex; gap: 20px; align-items: center; }
+    .footer-links a { font-size: 0.8rem; color: var(--text-faint); text-decoration: none; }
+    .footer-links a:hover { color: var(--text-dim); }
 
     /* ─── MOBILE ─── */
     @media (max-width: 840px) {
-      .offers-grid { grid-template-columns: 1fr; }
-      .tyson-body { grid-template-columns: 1fr; }
+      .problem-grid, .process-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
       .section { padding: 100px 24px; }
       .hero { padding: 100px 24px 80px; }
+      .problem { padding: 80px 24px; }
+      .solution { padding: 80px 24px; }
+      .process { padding: 80px 24px; }
       .founder { padding: 80px 24px; }
-      .offers { padding: 100px 24px; }
-      .newsletter { padding: 100px 24px; }
+      .final-cta { padding: 100px 24px; }
       footer { padding: 32px 24px; }
-      nav .nav-links .btn-ghost { display: none; }
-      .offer-card { padding: 40px 28px; }
       .hero-ctas { flex-direction: column; align-items: center; }
     }
   </style>
@@ -515,10 +370,7 @@
         </svg>
         <span class="logo-intrest">Intrest</span><span class="logo-media">Media</span>
       </a>
-      <div class="nav-links">
-        <a href="https://calendly.com/10gcolin/15min" target="_blank" rel="noopener" class="btn btn-ghost">Book a Call</a>
-        <a href="https://intrestmedia.beehiiv.com" target="_blank" rel="noopener" class="btn btn-red">Join the Waitlist</a>
-      </div>
+      <a href="https://calendly.com/10gcolin/15min" target="_blank" rel="noopener" class="btn btn-red">Book a Call</a>
     </div>
   </nav>
 
@@ -526,14 +378,16 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-left">
-        <div class="hero-label">Media Education &amp; Consulting</div>
+        <div class="hero-label">For Business Owners</div>
         <h1>
-          You don't need<br />
-          <span class="strike">more followers.</span><br />
-          You need the <span class="highlight">right content.</span>
+          Hire the <span class="highlight">right creator</span><br />
+          for your business.
         </h1>
         <p class="hero-sub">
-          In the Intrest Media era, the algorithm finds your audience — you just need to know what to post.
+          We place trained Executive Creators into businesses — matched to your industry, not a generic template.
+        </p>
+        <p class="hero-def">
+          <strong style="color:var(--white);">Executive Creator:</strong> a content specialist trained to run your brand's content like a media company runs a newsroom — not just post for you.
         </p>
         <div class="hero-ctas">
           <a href="https://calendly.com/10gcolin/15min" target="_blank" rel="noopener" class="btn btn-red btn-lg">Book a Free Strategy Call</a>
@@ -545,9 +399,76 @@
     </div>
   </section>
 
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="problem-header">
+      <p class="eyebrow">The Problem</p>
+      <h2 class="section-title">You know you need a creator.<br />You just don't know how to hire one.</h2>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="num">01</div>
+        <h3>Agencies don't know your industry</h3>
+        <p>Generic social media agencies run the same playbook for every client. They don't understand what makes your business or your industry different.</p>
+      </div>
+      <div class="problem-card">
+        <div class="num">02</div>
+        <h3>Freelancers are a gamble</h3>
+        <p>Anyone can call themselves a content creator. Without a way to vet skill, fit, and reliability, hiring one is a coin flip.</p>
+      </div>
+      <div class="problem-card">
+        <div class="num">03</div>
+        <h3>In-house hires take months</h3>
+        <p>Posting a job, screening resumes, and training someone from scratch takes months — and there's still no guarantee they get it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="solution">
+    <div class="solution-inner">
+      <p class="eyebrow">What We Do</p>
+      <h2 class="section-title">We train creators. Then we help you find the right one.</h2>
+      <p>
+        Executive Creators go through our program before we ever introduce them to a business. They learn how content actually gets distributed, how to build a strategy around a specific industry, and how to operate like part of a media team — not a freelancer posting whenever they feel like it.
+      </p>
+      <p>
+        When you book a call, we learn about your business and what you actually need. If we have a creator trained and ready for your industry, we make the introduction. You interview them and decide if they're the right fit.
+      </p>
+      <div class="disclaimer-box">
+        We're the curator and trainer, not a staffing agency. We don't guarantee outcomes or employment — we make sure you're meeting creators who've actually been trained on this method, and you make the hiring decision.
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="process-header">
+      <p class="eyebrow">How It Works</p>
+      <h2 class="section-title">Three steps. No guesswork.</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h3>Book a call</h3>
+        <p>Tell us about your business, your industry, and what you need a creator to actually do.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h3>We match you</h3>
+        <p>We introduce you to Executive Creators trained in the Intrest Media method who fit your industry.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h3>You hire the right fit</h3>
+        <p>You interview the creator and decide. No pressure, no obligation — just the right introduction.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- FOUNDER -->
   <section class="founder" id="founder">
-    <div class="founder-inner" style="grid-template-columns: 1fr; max-width: 720px;">
+    <div class="founder-inner">
       <div class="founder-text">
         <p class="eyebrow">The Founder</p>
         <h2 class="section-title">Built by someone who's been inside the machine.</h2>
@@ -555,143 +476,20 @@
           I spent over a decade at TMZ — rising from Producer to Reporter, Senior Producer, and ultimately Bureau Chief, one of the most senior editorial roles at one of the most powerful media companies in the world. I wasn't just watching viral content happen. I was making it.
         </p>
         <p>
-          I learned exactly how stories get found, why some content explodes and most disappears, and what the algorithm actually rewards. Now I teach it. Whether you're a business owner who's never made a reel or a creator with 50K followers who's plateaued — I can show you what changes everything.
+          I learned exactly how stories get found, why some content explodes and most disappears, and what the algorithm actually rewards. Now I train creators on that method — and help businesses find the ones who fit.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- TWO OFFERS -->
-  <section class="offers" id="offers">
-    <div class="offers-header">
-      <p class="eyebrow">Work With Us</p>
-      <h2 class="section-title">Two ways to get started.</h2>
-    </div>
-    <div class="offers-grid">
-
-      <!-- Card 1 -->
-      <div class="offer-card">
-        <p class="offer-tag">The Personal Media Business Accelerator</p>
-        <h3 class="offer-name">90 Days To Your Biggest Q4 Ever</h3>
-        <p class="offer-subtitle">Starting June 1st. 25 spots only.</p>
-        <div class="offer-price">
-          <div>
-            <div class="offer-badge">Early Bird — First 10 Spots</div>
-            <div class="offer-price-amount">
-              <span class="offer-price-num">$997</span>
-              <span class="offer-price-note">one-time</span>
-            </div>
-          </div>
-          <a href="https://buy.stripe.com/dRm4gyfOk3kG1dvaBRdby05" target="_blank" rel="noopener" class="btn btn-red btn-lg">Claim Your Spot</a>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="offer-card offer-card-secondary">
-        <p class="offer-tag">Intrest Media Retainer</p>
-        <h3 class="offer-name">We Inject A Media Company Into Your Business</h3>
-        <p class="offer-subtitle">For established businesses ready to get serious.</p>
-        <div class="offer-price">
-          <div>
-            <div class="offer-price-amount">
-              <span class="offer-price-num">$2,500</span>
-              <span class="offer-price-note">/month</span>
-            </div>
-            <p style="font-size:0.8rem;color:var(--text-faint);margin-top:4px;">Starting at</p>
-          </div>
-          <a href="https://calendly.com/10gcolin/15min" target="_blank" rel="noopener" class="btn btn-outline btn-lg">Book A Strategy Call</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- TYSON AI TOOL -->
-  <section class="tyson-section" id="tyson">
-    <div class="tyson-glow"></div>
-
-    <div class="tyson-banner">
-      <div class="tyson-banner-badge"><span class="pulse"></span> Coming Soon</div>
-      <span class="tyson-banner-text">The most powerful tool Intrest Media has ever built</span>
-    </div>
-
-    <div class="tyson-hero">
-      <span class="tyson-wordmark">TYSON</span>
-      <p class="tyson-positioning">
-        <strong>Meet Tyson.</strong> Your Personal Media Business Assistant. Powered by AI.<br />
-        Built by someone who spent a decade inside TMZ.
-      </p>
-      <a href="https://intrestmedia.beehiiv.com" target="_blank" rel="noopener" class="btn btn-red btn-lg">Get Early Access to Tyson</a>
-    </div>
-
-    <div class="tyson-body">
-      <div class="tyson-features">
-        <div class="tyson-feature">
-          <div class="tyson-feature-icon">🎯</div>
-          <div class="tyson-feature-text">
-            <h4>Knows What to Post</h4>
-            <p>Tell Tyson about your business. Get a content strategy built around what the algorithm is actually rewarding in your niche right now.</p>
-          </div>
-        </div>
-        <div class="tyson-feature">
-          <div class="tyson-feature-icon">⚡</div>
-          <div class="tyson-feature-text">
-            <h4>Built on 10+ Years of Media Intelligence</h4>
-            <p>Tyson isn't a generic AI. It's trained on a decade of real media industry knowledge — the same instincts that drove TMZ's content machine.</p>
-          </div>
-        </div>
-        <div class="tyson-feature">
-          <div class="tyson-feature-icon">📈</div>
-          <div class="tyson-feature-text">
-            <h4>Turns Posting into Growth</h4>
-            <p>No more guessing. No more wasted content. Every post Tyson helps you create is designed to find the audience already looking for you.</p>
-          </div>
-        </div>
-        <div class="tyson-feature">
-          <div class="tyson-feature-icon">🗣️</div>
-          <div class="tyson-feature-text">
-            <h4>Your Voice. Your Strategy.</h4>
-            <p>Tyson doesn't make you sound like everyone else. It helps you post more of what makes you — you — and makes sure the right people see it.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="tyson-mockup-panel">
-        <div class="tyson-mockup">
-          <div class="tyson-mockup-header">
-            <div class="ai-dot ai-dot-r"></div>
-            <div class="ai-dot ai-dot-y"></div>
-            <div class="ai-dot ai-dot-g"></div>
-            <div class="tyson-mockup-name"><span class="live-dot"></span> Tyson — Active</div>
-          </div>
-          <div class="tyson-chat">
-            <div class="ai-msg user">I run a bakery. 800 followers. I post but nothing happens. Help.</div>
-            <div class="ai-msg bot">
-              <span class="bot-name">Tyson</span>
-              Follower count isn't your problem — content type is. The algorithm is pushing transformation content hard in the food space right now. Stop posting finished products. Show the process. Your croissant lamination, the 6am dough pull, the moment something comes out of the oven. That's the content people can't scroll past. Post that tomorrow. <span class="ai-cursor"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="tyson-cta-strip">
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://intrestmedia.beehiiv.com" target="_blank" rel="noopener" class="btn btn-red btn-lg">Join the Waitlist for Tyson</a>
-        <a href="https://calendly.com/10gcolin/15min" target="_blank" rel="noopener" class="btn btn-outline btn-lg">Book a Free 15-Min Call</a>
-      </div>
-      <p>Free early access for the first 500 people who sign up.</p>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section class="newsletter" id="waitlist">
-    <div class="newsletter-inner">
-      <p class="eyebrow">Newsletter</p>
-      <h2>Join The Intrest Media Brief</h2>
-      <p>Weekly insights on building your Personal Media Business. Free. No spam.</p>
-      <a href="https://intrestmedia.beehiiv.com" target="_blank" rel="noopener noreferrer" class="newsletter-btn">Subscribe Free →</a>
-      <p class="newsletter-note">Join thousands of media professionals. Unsubscribe anytime.</p>
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="final-cta-inner">
+      <p class="eyebrow">Get Started</p>
+      <h2>Ready for the right creator in your business?</h2>
+      <p>Book a free 15-minute strategy call. We'll talk through what you need and whether we have the right fit for your industry.</p>
+      <a href="https://calendly.com/10gcolin/15min" target="_blank" rel="noopener" class="btn btn-red btn-lg">Book a Free Strategy Call</a>
+      <p class="final-cta-note">No obligation. Just a conversation.</p>
     </div>
   </section>
 
@@ -708,6 +506,9 @@
         </svg>
         <span class="logo-intrest">Intrest</span><span class="logo-media">Media</span>
       </a>
+      <div class="footer-links">
+        <a href="https://www.skool.com/grownupcreators" target="_blank" rel="noopener">Are you a creator? Join the community →</a>
+      </div>
       <p>© 2026 Intrest Media. All rights reserved.</p>
     </div>
   </footer>
