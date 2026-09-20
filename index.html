@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>INTRST Media — Hire a Trained Executive Creator for Your Business</title>
-  <meta name="description" content="INTRST Media places trained Executive Creators into businesses — the right content fit for your industry. Book a free strategy call." />
+  <title>INTRST Media — Stop Losing Customers to Competitors Who Post More Than You</title>
+  <meta name="description" content="INTRST Media injects a full media company into your business — strategy, content, and distribution — so you stop losing customers to competitors who simply show up more. Book a free strategy call." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
@@ -134,6 +134,17 @@
     .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
     .hero-note { font-size: 0.82rem; color: var(--text-faint); }
 
+    /* ─── PROOF BAR ─── */
+    .proof-bar { padding: 0 32px 100px; }
+    .proof-bar-inner {
+      max-width: 900px; margin: 0 auto; display: flex; justify-content: center;
+      gap: 56px; flex-wrap: wrap; border-top: 1px solid var(--border);
+      padding-top: 44px;
+    }
+    .proof-item { text-align: center; }
+    .proof-num { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.3px; color: var(--ink); line-height: 1; margin-bottom: 6px; }
+    .proof-desc { font-size: 0.68rem; font-weight: 500; color: var(--text-faint); text-transform: uppercase; letter-spacing: 1px; }
+
     /* ─── PROBLEM ─── */
     .problem { background: var(--bg-2); }
     .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 52px; }
@@ -174,6 +185,24 @@
     }
     .founder-text p { font-size: 0.98rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 20px; }
     .founder-text p:last-child { margin-bottom: 0; }
+
+    /* ─── OFFER CARD ─── */
+    .offer-section { text-align: center; }
+    .cta-card {
+      max-width: 460px; margin: 44px auto 0;
+      background: var(--ink); color: #fff;
+      border-radius: 20px; padding: 44px 40px;
+      text-align: left;
+    }
+    .cta-card-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 18px; display: block; }
+    .cta-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 24px; }
+    .cta-price-big { font-size: 3rem; font-weight: 800; letter-spacing: -2px; color: #fff; line-height: 1; }
+    .cta-price-big sup { font-size: 1.2rem; vertical-align: super; letter-spacing: 0; }
+    .cta-price-sub { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+    .cta-features { display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px; }
+    .cta-feature { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255,255,255,0.85); }
+    .cta-feature::before { content: '✓'; color: var(--red); font-weight: 700; }
+    .cta-card .btn-red { width: 100%; padding: 16px; font-size: 0.95rem; }
 
     /* ─── FINAL CTA ─── */
     .cta-section { background: var(--bg-2); text-align: center; }
@@ -222,15 +251,15 @@
     <div class="hero-blob hero-blob-1"></div>
     <div class="hero-blob hero-blob-2"></div>
     <div class="container">
-      <div class="hero-badge">For Business Owners</div>
+      <div class="hero-badge">For Business Owners &amp; Entrepreneurs</div>
 
-      <h1>Hire the <span class="red">right creator</span> for your business.</h1>
+      <h1>You're losing customers to competitors with <span class="red">worse products</span> — because they post and you don't.</h1>
 
       <p class="hero-sub">
-        We place trained Executive Creators into businesses — matched to your industry, not a generic template.
+        Every business is a media company now, whether you act like one or not. We install the strategy, content, and distribution system that makes sure your customers find you instead of them.
       </p>
       <p class="hero-def">
-        <strong>Executive Creator:</strong> a content specialist trained to run your brand's content like a media company runs a newsroom — not just post for you.
+        <strong>What that means:</strong> we don't just "manage your socials." We run your content like a media company runs a newsroom — planning, producing, and distributing it so it actually reaches buyers.
       </p>
 
       <div class="hero-ctas">
@@ -240,26 +269,35 @@
     </div>
   </section>
 
+  <!-- PROOF BAR -->
+  <div class="proof-bar">
+    <div class="proof-bar-inner">
+      <div class="proof-item"><div class="proof-num">850K+</div><div class="proof-desc">Followers</div></div>
+      <div class="proof-item"><div class="proof-num">15 Years</div><div class="proof-desc">Inside TMZ</div></div>
+      <div class="proof-item"><div class="proof-num">Bureau Chief</div><div class="proof-desc">Former Title</div></div>
+    </div>
+  </div>
+
   <!-- PROBLEM -->
   <section class="problem">
     <div class="container">
-      <span class="eyebrow">The Problem</span>
-      <h2 class="section-title">You know you need a creator.<br />You just don't know how to hire one.</h2>
+      <span class="eyebrow">The Real Cost</span>
+      <h2 class="section-title">You don't have a marketing problem.<br />You have a media problem.</h2>
       <div class="problem-grid">
         <div class="problem-card">
           <div class="num">01</div>
-          <h3>Agencies don't know your industry</h3>
-          <p>Generic social media agencies run the same playbook for every client. They don't understand what makes your business or your industry different.</p>
+          <h3>Every day you're quiet, they're not</h3>
+          <p>Your competitors are posting daily and picking up the customers who never even hear your name. Silence isn't neutral — it's losing.</p>
         </div>
         <div class="problem-card">
           <div class="num">02</div>
-          <h3>Freelancers are a gamble</h3>
-          <p>Anyone can call themselves a content creator. Without a way to vet skill, fit, and reliability, hiring one is a coin flip.</p>
+          <h3>Posting isn't the same as a strategy</h3>
+          <p>Random content with no system behind it burns time and money without ever compounding into real, predictable growth.</p>
         </div>
         <div class="problem-card">
           <div class="num">03</div>
-          <h3>In-house hires take months</h3>
-          <p>Posting a job, screening resumes, and training someone from scratch takes months — and there's still no guarantee they get it.</p>
+          <h3>You don't have time to figure it out</h3>
+          <p>You're running the business. Learning the algorithm, building a content operation, and executing it yourself isn't a real option.</p>
         </div>
       </div>
     </div>
@@ -269,40 +307,15 @@
   <section>
     <div class="container solution-inner">
       <span class="eyebrow">What We Do</span>
-      <h2 class="section-title">We train creators. Then we help you find the right one.</h2>
+      <h2 class="section-title">We inject a media company into your business.</h2>
       <p>
-        Executive Creators go through our program before we ever introduce them to a business. They learn how content actually gets distributed, how to build a strategy around a specific industry, and how to operate like part of a media team — not a freelancer posting whenever they feel like it.
+        Think of us as your outsourced content department — strategy, production, and distribution, run by someone who spent 15 years inside TMZ learning exactly how stories get found and why most content disappears.
       </p>
       <p>
-        When you book a call, we learn about your business and what you actually need. If we have a creator trained and ready for your industry, we make the introduction. You interview them and decide if they're the right fit.
+        We build the system: what to post, how often, and where it actually gets distributed to the people who buy from you. You keep running your business. We keep it visible.
       </p>
       <div class="disclaimer-box">
-        We're the curator and trainer, not a staffing agency. We don't guarantee outcomes or employment — we make sure you're meeting creators who've actually been trained on this method, and you make the hiring decision.
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="process">
-    <div class="container">
-      <span class="eyebrow">How It Works</span>
-      <h2 class="section-title">Three steps. No guesswork.</h2>
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="step-num">01</div>
-          <h3>Book a call</h3>
-          <p>Tell us about your business, your industry, and what you need a creator to actually do.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">02</div>
-          <h3>We match you</h3>
-          <p>We introduce you to Executive Creators trained in the Intrest Media method who fit your industry.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-num">03</div>
-          <h3>You hire the right fit</h3>
-          <p>You interview the creator and decide. No pressure, no obligation — just the right introduction.</p>
-        </div>
+        This is a service, not a guarantee. We bring the strategy and execution — what we can't promise is a specific result, because that depends on your business, your market, and how we work together. What you get is a real media operation, run right.
       </div>
     </div>
   </section>
@@ -321,9 +334,32 @@
             I spent over a decade at TMZ — rising from Producer to Reporter, Senior Producer, and ultimately Bureau Chief, one of the most senior editorial roles at one of the most powerful media companies in the world. I wasn't just watching viral content happen. I was making it.
           </p>
           <p>
-            I learned exactly how stories get found, why some content explodes and most disappears, and what the algorithm actually rewards. Now I train creators on that method — and help businesses find the ones who fit.
+            I learned exactly how stories get found, why some content explodes and most disappears, and what the algorithm actually rewards. Now I bring that same media-company operation into businesses that can't afford to stay invisible.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="offer-section">
+    <div class="container">
+      <span class="eyebrow eyebrow-red center" style="display:block;">The Offer</span>
+      <h2 class="section-title center">We become your media company.</h2>
+      <p class="section-sub center">For established businesses ready to stop losing customers to louder competitors.</p>
+
+      <div class="cta-card">
+        <span class="cta-card-label">INTRST Media Retainer</span>
+        <div class="cta-price-row">
+          <div class="cta-price-big"><sup>$</sup>2,500</div>
+          <div class="cta-price-sub">/month · starting at</div>
+        </div>
+        <div class="cta-features">
+          <span class="cta-feature">Full content strategy for your industry</span>
+          <span class="cta-feature">Production &amp; distribution handled for you</span>
+          <span class="cta-feature">Direct access to a 15-year media veteran</span>
+        </div>
+        <a href="https://calendly.com/10gcolin/15min" target="_blank" rel="noopener" class="btn btn-red">Book a Free Strategy Call</a>
       </div>
     </div>
   </section>
@@ -332,8 +368,8 @@
   <section class="cta-section">
     <div class="container final-cta-inner">
       <span class="eyebrow eyebrow-red center" style="display:block;">Get Started</span>
-      <h2 class="section-title center">Ready for the right creator in your business?</h2>
-      <p class="section-sub center">Book a free 15-minute strategy call. We'll talk through what you need and whether we have the right fit for your industry.</p>
+      <h2 class="section-title center">Ready to stop losing customers to silence?</h2>
+      <p class="section-sub center">Book a free 15-minute strategy call. We'll talk through where you're losing customers and whether we're the right fit.</p>
       <div class="hero-ctas" style="margin-top:8px;">
         <a href="https://calendly.com/10gcolin/15min" target="_blank" rel="noopener" class="btn btn-red btn-xl">Book a Free Strategy Call</a>
       </div>

@@ -2,8 +2,8 @@
 
 ## Who This Is
 - Colin — Former TMZ Bureau Chief
-- 800K+ followers across TikTok (136K), YouTube (61K), Instagram (16.5K)
-- Building Intrest Media as a media education & consulting brand
+- 850K+ followers across TikTok, YouTube, and Instagram
+- Building INTRST Media as a media education & consulting brand
 
 ## The Core Idea
 Algorithms distribute content based on interest, not follower count. You don't need more followers, you need the right content.
